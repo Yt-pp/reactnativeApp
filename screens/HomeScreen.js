@@ -7,7 +7,7 @@ export default function HomeScreen() {
   return (
     <ScreenWrapper className="flex-1">
     <View className="flex-row justify-between item-center p-4">
-    <Text className={`${colors.heading} font-bold text-3xl shadow-sm`}>First App</Text>
+    <Text className={`${colors.heading} font-bold text-3xl shadow-sm`}>First Kpop App</Text>
     <TouchableOpacity className="p-2 px-3 bg-white border border-gray-200 rounded-full">
         <Text className={colors.heading}>LogOut</Text>
     </TouchableOpacity>
@@ -22,7 +22,7 @@ export default function HomeScreen() {
       <View className="flex-row justify-between items-center">
           <Text className={`${colors.heading} font-bold text-xl`}>Recent Trip</Text>
           <TouchableOpacity className="p-2 px-3 bg-white border border-gray-200 rounded-full">
-            <Text className={colors.heading}>Add Trip</Text>
+            <Text className={colors.heading}>Add Kpop</Text>
           </TouchableOpacity>
       </View>
     </View>

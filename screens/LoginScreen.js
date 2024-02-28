@@ -14,53 +14,38 @@ export default function LoginScreen() {
   const [passwordError, setPasswordError] = useState('');
 
 
-    // Define a variable to hold the login logic
-const handleLoginWithNoErrors = () => {
-  console.log(emailError,passwordError)
-    // If no errors, proceed with login
-if (emailError === '' && passwordError === '') {
-  // Reset input fields
-  setEmail('');
-  setPassword('');
-  // Handle login
-  navigation.navigate('Home');
-}
-};
-
   const handleLogin = () => {
-
+    let emailErrorText = '';
+    let passwordErrorText = '';
+  
     // Validate email
-if (!email) {
-  setEmailError('Email is required');
-} else if (!isValidEmail(email)) {
-  setEmailError('Invalid email format');
-} else {
-  // Clear any previous email errors if present
-  setEmailError('');
-
-  // Call the login logic
-  handleLoginWithNoErrors();
-
-}
-
-// Validate password
-if (!password) {
-  setPasswordError('Password is required');
-} else if (password.length < 6) {
-  setPasswordError('Password must be at least 6 characters long');
-} else {
-
- // Clear any previous password errors if present
- setPasswordError('');
-
-  // Call the login logic
-  handleLoginWithNoErrors();
-
-}
-
-
-
+    if (!email) {
+      emailErrorText = 'Email is required';
+    } else if (!isValidEmail(email)) {
+      emailErrorText = 'Invalid email format';
+    }
+  
+    // Validate password
+    if (!password) {
+      passwordErrorText = 'Password is required';
+    } else if (password.length < 6) {
+      passwordErrorText = 'Password must be at least 6 characters long';
+    }
+  
+    // Set errors
+    setEmailError(emailErrorText);
+    setPasswordError(passwordErrorText);
+  
+    // If password is valid, proceed with login regardless of email
+    if (emailErrorText === '' &&passwordErrorText === '') {
+      // Reset input fields
+      setEmail('');
+      setPassword('');
+      // Handle login
+      navigation.navigate('Home');
+    }
   };
+  
 
   const isValidEmail = (email) => {
     // Regular expression to validate email format

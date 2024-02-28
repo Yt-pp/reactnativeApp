@@ -4,27 +4,62 @@ import { colors } from '../theme'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { ArrowLeftIcon } from 'react-native-heroicons/outline'
 import { useNavigation } from '@react-navigation/core'
-
+import { ExclamationTriangleIcon } from 'react-native-heroicons/outline'
 
 export default function SignUpScreen() {
   const navigation = useNavigation();
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [usernameError, setUsernameError] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
   
-  const handleSignUp = ()=>{
-      if(username && email && password){
-        // Clear the input fields
-        setUsername('');
-        setEmail('');
-        setPassword('');
-        //handle login
-        navigation.navigate('Home')
-        
-      }else{
-        //handle error
-      }
+  const handleSignUp = () => {
+    let usernameErrorText = '';
+    let emailErrorText = '';
+    let passwordErrorText = '';
+  
+    // Validate name
+    if (!username) {
+      usernameErrorText = 'Username is required';
+    } 
+
+    // Validate email
+    if (!email) {
+      emailErrorText = 'Email is required';
+    } else if (!isValidEmail(email)) {
+      emailErrorText = 'Invalid email format';
+    }
+  
+    // Validate password
+    if (!password) {
+      passwordErrorText = 'Password is required';
+    } else if (password.length < 6) {
+      passwordErrorText = 'Password must be at least 6 characters long';
+    }
+  
+    // Set errors
+    setUsernameError(usernameErrorText);
+    setEmailError(emailErrorText);
+    setPasswordError(passwordErrorText);
+  
+    // If field is valid, proceed with signup
+    if (usernameErrorText === '' && emailErrorText === '' && passwordErrorText === '') {
+      // Reset input fields
+      setEmail('');
+      setPassword('');
+      // Handle login
+      navigation.navigate('Home');
+    }
+  };
+
+  const isValidEmail = (email) => {
+    // Regular expression to validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
   }
+
  
   return (
     <View className="flex-1 bg-white" style={{backgroundColor:colors.theme}}>
@@ -40,7 +75,6 @@ export default function SignUpScreen() {
         <Image source={require('../assets/images/signUp.png')}
         style={{width:200,height:200}}
         >
-
         </Image>
       </View>
 
@@ -54,15 +88,31 @@ export default function SignUpScreen() {
           value={username} 
           onChangeText={value=> setUsername(value)}
           placeholder='Enter Name'
-          className="p-4 bg-gray-100 text-gray-700 rounded-2xl mb-3">
+          className="p-4 bg-gray-100 text-gray-700 rounded-2xl">
           </TextInput>
+
+          {usernameError !== '' && (
+        <View style={{ flexDirection: 'row', alignItems: 'center' }} className="ml-4 mb-1">
+          <ExclamationTriangleIcon style={{ color: 'red'}}></ExclamationTriangleIcon>
+          <Text style={{ color: 'red'}} className="ml-2">{usernameError}</Text>
+        </View>
+      )}
+
           <Text className="text-gray-700 ml-4">Email Address</Text>
           <TextInput
           value={email} 
           onChangeText={value=> setEmail(value)}
           placeholder='Enter Email'
-          className="p-4 bg-gray-100 text-gray-700 rounded-2xl mb-3">
+          className="p-4 bg-gray-100 text-gray-700 rounded-2xl">
           </TextInput>
+
+          {emailError !== '' && (
+        <View style={{ flexDirection: 'row', alignItems: 'center' }} className="ml-4 mb-1">
+          <ExclamationTriangleIcon style={{ color: 'red'}}></ExclamationTriangleIcon>
+          <Text style={{ color: 'red'}} className="ml-2">{emailError}</Text>
+        </View>
+      )}
+
           <Text className="text-gray-700 ml-4">Password</Text>
           <TextInput
           value={password} 
@@ -71,6 +121,13 @@ export default function SignUpScreen() {
           placeholder='Enter Password'
           className="p-4 bg-gray-100 text-gray-700 rounded-2xl">
           </TextInput>
+
+          {passwordError !== '' && (
+          <View style={{ flexDirection: 'row', alignItems: 'center' }} className="ml-4">
+          <ExclamationTriangleIcon style={{ color: 'red'}}></ExclamationTriangleIcon>
+          <Text style={{ color: 'red'}} className="ml-2">{passwordError}</Text>
+        </View>
+      )}
           <TouchableOpacity className="flex items-end mb-5">
             <Text className="text-gray-700">Forgot Password?</Text>
           </TouchableOpacity>

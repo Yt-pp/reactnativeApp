@@ -5,6 +5,7 @@ import imageSequence from '../assets/images/image';
 import BackButton from '../components/backButton';
 import { colors } from '../theme';
 import StarRating from 'react-native-star-rating';
+import { StarIcon } from "react-native-heroicons/outline";
 
 const categories = [
     {
@@ -96,10 +97,15 @@ export default function DetailScreen() {
         starSize={30}
         maxStars={5}
         containerStyle={{width:120}}
+        interitemSpacing={20}
         rating={item.stars}
         emptyStarColor="lightgray"
-        fullStar={require('../assets/images/fullstar.png')}
+        emptyStar={require('../assets/images/unselect_star.png')}
+        fullStar={require('../assets/images/select_star.png')}
       />
+
+
+
 
                 <View style={{flexDirection: 'row', alignItems: 'center'}} className="mt-5 mb-5">
         

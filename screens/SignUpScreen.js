@@ -1,10 +1,11 @@
-import { View, Text, TouchableOpacity, Image, TextInput } from 'react-native'
+import { View, Text, TouchableOpacity, Image, TextInput, ScrollView } from 'react-native'
 import React, { useState } from 'react'
 import { colors } from '../theme'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { ArrowLeftIcon } from 'react-native-heroicons/outline'
 import { useNavigation } from '@react-navigation/core'
 import { ExclamationTriangleIcon } from 'react-native-heroicons/outline'
+import Animated, { BounceInLeft, FadeInDown, LightSpeedInLeft, SlideInDown, StretchInY } from 'react-native-reanimated';
 
 export default function SignUpScreen() {
   const navigation = useNavigation();
@@ -66,23 +67,24 @@ export default function SignUpScreen() {
 
    
     <SafeAreaView className="flex">
-      <View className="flex-row justify-start mt-5">
+    <Animated.View entering={LightSpeedInLeft.delay(150).duration(1000)} className="flex-row justify-start mt-5">
           <TouchableOpacity onPress={()=> navigation.goBack()} className="bg-yellow-400 p-2 rounded-tr-2xl rounded-bl-2xl ml-4">
             <ArrowLeftIcon size="20" color="black"></ArrowLeftIcon>
           </TouchableOpacity>
-      </View>
+      </Animated.View>
       <View className="flex-row justify-center">
-        <Image source={require('../assets/images/signUp.png')}
+        <Animated.Image entering={StretchInY.delay(600).duration(500).springify()} source={require('../assets/images/signUp.png')}
         style={{width:200,height:200}}
-        >
-        </Image>
+        />
       </View>
 
     </SafeAreaView>
-    <View className="flex-1 bg-white px-8 pt-8"
+    <Animated.View entering={SlideInDown.delay(100).duration(500)} className="flex-1 bg-white px-8 pt-8"
     style={{borderTopLeftRadius:50,borderTopRightRadius:50}}
     >
+        <ScrollView contentContainerStyle={{ flexGrow: 1 }} showsVerticalScrollIndicator={false}>
       <View className="form space-y-2">
+      <Animated.View entering={FadeInDown.delay(400).duration(1000).springify()}>
       <Text className="text-gray-700 ml-4">Full Name</Text>
           <TextInput
           value={username} 
@@ -90,14 +92,15 @@ export default function SignUpScreen() {
           placeholder='Enter Name'
           className="p-4 bg-gray-100 text-gray-700 rounded-2xl">
           </TextInput>
-
+    </Animated.View>
           {usernameError !== '' && (
-        <View style={{ flexDirection: 'row', alignItems: 'center' }} className="ml-4 mb-1">
+        <Animated.View entering={BounceInLeft.delay(10).duration(100).springify().damping(2)} style={{ flexDirection: 'row', alignItems: 'center' }} className="ml-4">
           <ExclamationTriangleIcon style={{ color: 'red'}}></ExclamationTriangleIcon>
           <Text style={{ color: 'red'}} className="ml-2">{usernameError}</Text>
-        </View>
+        </Animated.View>
       )}
-
+      <View className="mb-2"></View>
+        <Animated.View entering={FadeInDown.delay(500).duration(1000).springify()}>
           <Text className="text-gray-700 ml-4">Email Address</Text>
           <TextInput
           value={email} 
@@ -105,14 +108,15 @@ export default function SignUpScreen() {
           placeholder='Enter Email'
           className="p-4 bg-gray-100 text-gray-700 rounded-2xl">
           </TextInput>
-
+          </Animated.View>
           {emailError !== '' && (
-        <View style={{ flexDirection: 'row', alignItems: 'center' }} className="ml-4 mb-1">
+        <Animated.View entering={BounceInLeft.delay(10).duration(100).springify().damping(2)} style={{ flexDirection: 'row', alignItems: 'center' }} className="ml-4">
           <ExclamationTriangleIcon style={{ color: 'red'}}></ExclamationTriangleIcon>
           <Text style={{ color: 'red'}} className="ml-2">{emailError}</Text>
-        </View>
+        </Animated.View>
       )}
-
+      <View className="mb-2"></View>
+        <Animated.View entering={FadeInDown.delay(600).duration(1000).springify()}>
           <Text className="text-gray-700 ml-4">Password</Text>
           <TextInput
           value={password} 
@@ -121,23 +125,27 @@ export default function SignUpScreen() {
           placeholder='Enter Password'
           className="p-4 bg-gray-100 text-gray-700 rounded-2xl">
           </TextInput>
-
+          </Animated.View>
           {passwordError !== '' && (
-          <View style={{ flexDirection: 'row', alignItems: 'center' }} className="ml-4">
+          <Animated.View entering={BounceInLeft.delay(10).duration(100).springify().damping(2)} style={{ flexDirection: 'row', alignItems: 'center' }} className="ml-4">
           <ExclamationTriangleIcon style={{ color: 'red'}}></ExclamationTriangleIcon>
           <Text style={{ color: 'red'}} className="ml-2">{passwordError}</Text>
-        </View>
+        </Animated.View>
       )}
+        <Animated.View entering={FadeInDown.delay(650).duration(1000).springify()}>
           <TouchableOpacity className="flex items-end mb-5">
             <Text className="text-gray-700">Forgot Password?</Text>
           </TouchableOpacity>
+          </Animated.View>
+          <Animated.View entering={FadeInDown.delay(700).duration(1000).springify()}>
           <TouchableOpacity onPress={handleSignUp} className="bg-yellow-400 rounded-2xl py-3">
             <Text className="font-xl text-center text-gray-700 font-bold">Sign Up</Text>
           </TouchableOpacity>
-          <Text className="flex text-center text-xl font-bold text-gray-700 py-5">
+          </Animated.View>
+          <Animated.Text entering={FadeInDown.delay(800).duration(1000).springify()} className="flex text-center text-xl font-bold text-gray-700 py-5">
             Or
-          </Text>
-          <View className="flex-row justify-center space-x-12 mb-7">
+          </Animated.Text>
+          <Animated.View entering={FadeInDown.delay(900).duration(1000).springify()} className="flex-row justify-center space-x-12 mb-7">
             <TouchableOpacity className="p-2 bg-gray-100 rounded-2xl">
             <Image source={require("../assets/images/googleIcon.png")}
             className="w-10 h-10">
@@ -153,17 +161,18 @@ export default function SignUpScreen() {
             className="w-10 h-10">
             </Image>
             </TouchableOpacity>
-          </View>
-          <View className="flex-row justify-center">
+          </Animated.View>
+          <Animated.View entering={FadeInDown.delay(1000).duration(1000).springify()} className="flex-row justify-center mb-5">
                 <Text className="text-gray-700 font-semibold">
                     Already Have an account?
                 </Text>
                 <TouchableOpacity onPress={()=>navigation.navigate('Login')}>
                     <Text className="font-semibold text-yellow-400"> Login</Text>
                 </TouchableOpacity>
-            </View>
+            </Animated.View>
       </View>
-    </View>
+      </ScrollView>
+    </Animated.View>
     </View>
   )
 }

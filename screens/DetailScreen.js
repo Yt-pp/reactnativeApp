@@ -6,6 +6,7 @@ import BackButton from '../components/backButton';
 import { colors } from '../theme';
 import StarRating from 'react-native-star-rating';
 import { StarIcon } from "react-native-heroicons/outline";
+import HeartButton from '../components/heartButton';
 
 const categories = [
     {
@@ -80,12 +81,15 @@ export default function DetailScreen() {
                 <View className="absolute top-5 left-5">
                 <BackButton></BackButton>
                 </View>
+                <View className="absolute top-5 right-5">
+                    <HeartButton></HeartButton>
+                </View>
             </View>
             <View 
             style={{borderTopLeftRadius: 40,borderTopRightRadius: 40}}
             className="bg-white px-5 -mt-12 pt-6"
             >
-                <View className="space-y-2">
+                <View className="space-y-2 mb-3">
                     <Text className={`${colors.heading} text-gray-950 text-3xl font-bold`}>{item.name}</Text>
                     
                     
@@ -94,7 +98,7 @@ export default function DetailScreen() {
 
                 <StarRating
         disabled={true}
-        starSize={30}
+        starSize={23}
         maxStars={5}
         containerStyle={{width:120}}
         interitemSpacing={20}
@@ -169,12 +173,12 @@ export default function DetailScreen() {
                             Songs.map((song, index)=>{
                                 
                                 return (
-                                    <View key={index} className="mr-1">
+                                    <View key={index} className="mr-2">
                                     <TouchableOpacity
                                     onPress={() => {
                                             console.log(song);
                                         }}
-                                    className="p-1 rounded-lg shadow-2xl bg-white"
+                                    className="p-1 rounded-lg bg-white"
                                     >
                                         <Image 
                                          style={{width: 160, height: 160}}
@@ -184,8 +188,8 @@ export default function DetailScreen() {
                                         <View 
                                         style={{maxWidth:150}}
                                         className="bg-white">
-                                        <Text className="text-gray-950 text-lg font-semibold">{song.name}</Text>
-                                        <Text style={{ marginTop: -10 }} className="text-gray-400 text-lg font-semibold">{song.singer}</Text>
+                                        <Text className="text-gray-950 text-lg">{song.name}</Text>
+                                        <Text style={{ marginTop: -10 }} className="text-gray-400 text-lg">{item.team}</Text>
                                         </View>
                                     </TouchableOpacity>
                                     </View>

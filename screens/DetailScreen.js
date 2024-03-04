@@ -1,12 +1,13 @@
 import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
-import { useRoute } from '@react-navigation/core'
+import { useNavigation, useRoute } from '@react-navigation/core'
 import imageSequence from '../assets/images/image';
 import BackButton from '../components/backButton';
 import { colors } from '../theme';
 import StarRating from 'react-native-star-rating';
 import { StarIcon } from "react-native-heroicons/outline";
 import HeartButton from '../components/heartButton';
+import ScreenWrapper from '../components/screenWrapper'
 
 const categories = [
     {
@@ -15,6 +16,7 @@ const categories = [
         singer: "aespa",
         image: require('../assets/images/Aespa_-_Drama.png'),
         year:2024,
+        desc:"Drama is the fourth extended play by South Korean girl group Aespa. It was released by SM Entertainment on November 10, 2023, and contains six tracks including the lead single of the same name."
     },
     {
         id:2,
@@ -69,19 +71,20 @@ const Songs = [
 
 export default function DetailScreen() {
     const [activeCategory, setActiveCategory] = useState(null);
-
+    const navigation = useNavigation();
     const {params} = useRoute();
     let item = params;
     // console.log('item: ', item)
   return (
+    
     <View className="bg-white h-full">
         <ScrollView>
             <View className="relative">
                 <Image className="w-full h-72" source={imageSequence(item.id)}></Image>
-                <View className="absolute top-5 left-5">
+                <View className="absolute top-10 left-5">
                 <BackButton></BackButton>
                 </View>
-                <View className="absolute top-5 right-5">
+                <View className="absolute top-10 right-5">
                     <HeartButton></HeartButton>
                 </View>
             </View>
@@ -139,7 +142,7 @@ export default function DetailScreen() {
                                     <View key={index} className="mr-6">
                                     <TouchableOpacity
                 
-                                    onPress={()=> setActiveCategory(category.id)}
+                                    onPress={()=> {setActiveCategory}}
                                     className={"flex flex-row justify-center items-center p-1 rounded-lg shadow-2xl bg-white"+btnClass}
                                     >
                                         <Image 
@@ -203,5 +206,6 @@ export default function DetailScreen() {
         </ScrollView>
 
     </View>
+    
   )
 }

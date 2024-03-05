@@ -142,7 +142,7 @@ export default function DetailScreen() {
                                     <View key={index} className="mr-6">
                                     <TouchableOpacity
                 
-                                    onPress={()=> {setActiveCategory}}
+                                    onPress={()=> {navigation.navigate('Album', {...category})}}
                                     className={"flex flex-row justify-center items-center p-1 rounded-lg shadow-2xl bg-white"+btnClass}
                                     >
                                         <Image 

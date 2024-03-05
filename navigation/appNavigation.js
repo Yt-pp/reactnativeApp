@@ -8,6 +8,7 @@ import WelcomeScreen from '../screens/WelcomeScreen';
 import SignUpScreen from '../screens/SignUpScreen';
 import DetailScreen from '../screens/DetailScreen';
 import AlbumScreen from '../screens/AlbumScreen';
+import MusicPlayerScreen from '../screens/MusicPlayerScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -23,7 +24,7 @@ export default function AppNavigation() {
       <Stack.Screen options={{headerShown:false}} name="AddExpense" component={AddExpenseScreen} />
       <Stack.Screen options={{headerShown:false}} name="Detail" component={DetailScreen} />
       <Stack.Screen options={{headerShown:false}} name="Album" component={AlbumScreen} />
-
+      <Stack.Screen options={{headerShown:false}} name="MusicPlayer" component={MusicPlayerScreen} />
     </Stack.Navigator>
   </NavigationContainer>
   );

@@ -5,6 +5,7 @@ import { colors } from '../theme'
 import imageSequence from '../assets/images/image'
 import EmptyList from '../components/emptyList'
 import { useNavigation } from '@react-navigation/core'
+import LinearGradient from 'react-native-linear-gradient'
 
 const items = [
   {
@@ -44,7 +45,9 @@ const items = [
 export default function HomeScreen() {
   const navigation = useNavigation();
   return (
-    <ScreenWrapper className="flex-1">
+    
+    
+      <LinearGradient colors={['#4c669f', '#3b5998']} style={{flex:1}}>
     <View className="flex-row justify-between item-center p-4">
     <Text className={`${colors.heading} font-bold text-3xl shadow-sm`}>First K-pop App</Text>
     <TouchableOpacity onPress={()=>navigation.navigate('Login')} className="p-2 px-3 bg-white border border-gray-200 rounded-full">
@@ -90,6 +93,8 @@ export default function HomeScreen() {
               />
           </View>
       </View>
-   </ScreenWrapper>
+      </LinearGradient>
+  
+   
   )
 }

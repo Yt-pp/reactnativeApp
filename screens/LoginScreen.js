@@ -5,7 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { ArrowLeftIcon } from 'react-native-heroicons/outline'
 import { useNavigation } from '@react-navigation/core'
 import { ExclamationTriangleIcon } from 'react-native-heroicons/outline'
-import Animated, { FadeInDown, LightSpeedInLeft, SlideInDown, StretchInY } from 'react-native-reanimated';
+import Animated, { FadeInDown, LightSpeedInLeft, SlideInDown, StretchInY, BounceInLeft } from 'react-native-reanimated';
 
 export default function LoginScreen() {
   const navigation = useNavigation();
@@ -59,7 +59,7 @@ export default function LoginScreen() {
    
     <SafeAreaView className="flex">
       <Animated.View entering={LightSpeedInLeft.delay(150).duration(1000)} className="flex-row justify-start mt-5">
-          <TouchableOpacity onPress={()=> navigation.goBack()} className="bg-yellow-400 p-2 rounded-tr-2xl rounded-bl-2xl ml-4">
+          <TouchableOpacity onPress={()=> navigation.navigate('Welcome')} className="bg-yellow-400 p-2 rounded-tr-2xl rounded-bl-2xl ml-4">
             <ArrowLeftIcon size="20" color="black"></ArrowLeftIcon>
           </TouchableOpacity>
       </Animated.View>
@@ -85,10 +85,10 @@ export default function LoginScreen() {
           </TextInput>
           </Animated.View>
           {emailError !== '' && (
-        <View style={{ flexDirection: 'row', alignItems: 'center' }} className="ml-4">
+        <Animated.View entering={BounceInLeft.delay(10).duration(100).springify().damping(2)} style={{ flexDirection: 'row', alignItems: 'center' }} className="ml-4">
           <ExclamationTriangleIcon style={{ color: 'red'}}></ExclamationTriangleIcon>
           <Text style={{ color: 'red'}} className="ml-2">{emailError}</Text>
-        </View>
+        </Animated.View>
       )}
         <View className="mb-3"></View>
      <Animated.View entering={FadeInDown.delay(600).duration(1000).springify()}>
@@ -102,10 +102,10 @@ export default function LoginScreen() {
           </TextInput>
           </Animated.View>
           {passwordError !== '' && (
-          <View style={{ flexDirection: 'row', alignItems: 'center' }} className="ml-4">
+          <Animated.View entering={BounceInLeft.delay(10).duration(100).springify().damping(2)} style={{ flexDirection: 'row', alignItems: 'center' }} className="ml-4">
           <ExclamationTriangleIcon style={{ color: 'red'}}></ExclamationTriangleIcon>
           <Text style={{ color: 'red'}} className="ml-2">{passwordError}</Text>
-        </View>
+        </Animated.View>
       )}
        <Animated.View entering={FadeInDown.delay(650).duration(1000).springify()}>
           <TouchableOpacity className="flex items-end mb-5">

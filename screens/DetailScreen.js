@@ -8,6 +8,8 @@ import StarRating from 'react-native-star-rating';
 import { StarIcon } from "react-native-heroicons/outline";
 import HeartButton from '../components/heartButton';
 import ScreenWrapper from '../components/screenWrapper'
+import ComponentTrack from '../components/componentTrack';
+import MusicPlayerModal from '../components/MusicPlayerModal';
 
 const categories = [
     {
@@ -77,8 +79,8 @@ export default function DetailScreen() {
     // console.log('item: ', item)
   return (
     
-    <View className="bg-white h-full">
-        <ScrollView>
+    <View className="bg-white flex-1">
+        <ScrollView className="overflow-visible">
             <View className="relative">
                 <Image className="w-full h-72" source={imageSequence(item.id)}></Image>
                 <View className="absolute top-10 left-5">
@@ -204,7 +206,8 @@ export default function DetailScreen() {
 
             </View>
         </ScrollView>
-
+<ComponentTrack/>
+<MusicPlayerModal/>
     </View>
     
   )

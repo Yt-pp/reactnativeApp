@@ -45,11 +45,10 @@ const items = [
 export default function HomeScreen() {
   const navigation = useNavigation();
   return (
-    
-    
-      <LinearGradient colors={['#4c669f', '#3b5998']} style={{flex:1}}>
+    <LinearGradient className="flex-1" colors={['#aa4b6b', '#6b6b83', '#3b8d99']}>
+    <ScreenWrapper>
     <View className="flex-row justify-between item-center p-4">
-    <Text className={`${colors.heading} font-bold text-3xl shadow-sm`}>First K-pop App</Text>
+    <Text className={`${colors.heading} font-bold text-3xl shadow-sm text-white`}>First K-pop App</Text>
     <TouchableOpacity onPress={()=>navigation.navigate('Login')} className="p-2 px-3 bg-white border border-gray-200 rounded-full">
         <Text className={colors.heading}>LogOut</Text>
     </TouchableOpacity>
@@ -62,7 +61,7 @@ export default function HomeScreen() {
 
     <View className="px-4 space-y-3">
       <View className="flex-row justify-between items-center">
-          <Text className={`${colors.heading} font-bold text-xl`}>Recently Added</Text>
+          <Text className={`${colors.heading} font-bold text-xl text-white`}>Recently Added</Text>
           <TouchableOpacity onPress={()=> navigation.navigate('AddKpop')} className="p-2 px-3 bg-white border border-gray-200 rounded-full">
             <Text className={colors.heading}>Add Kpop</Text>
           </TouchableOpacity>
@@ -93,8 +92,7 @@ export default function HomeScreen() {
               />
           </View>
       </View>
-      </LinearGradient>
-  
-   
+   </ScreenWrapper>
+   </LinearGradient>
   )
 }

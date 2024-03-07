@@ -90,7 +90,10 @@ export default function SignUpScreen() {
           value={username} 
           onChangeText={value=> setUsername(value)}
           placeholder='Enter Name'
-          className="p-4 bg-gray-100 text-gray-700 rounded-2xl">
+          className="p-4 bg-gray-100 text-gray-700 rounded-2xl"
+        style={[
+        usernameError !== '' && {borderWidth: 2,borderColor: 'red'}, // Apply Tailwind-like class 'border-red-500' conditionally
+        ]}>
           </TextInput>
     </Animated.View>
           {usernameError !== '' && (

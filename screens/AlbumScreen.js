@@ -6,13 +6,16 @@ import { BackwardIcon, ChevronDownIcon, ForwardIcon, PauseIcon, PlayIcon } from 
 import { colors } from '../theme';
 import { ArrowPathRoundedSquareIcon, EllipsisHorizontalIcon, PlusIcon, StarIcon } from 'react-native-heroicons/outline';
 import { Player } from '../PlayContext';
-import { BottomModal, ModalPortal } from "react-native-modals";
 import { ModalContent } from "react-native-modals";
 import Animated, { FadeIn, FadeInDown, FadeOut, FadeOutDown, LightSpeedInLeft, SlideInDown, StretchInY } from 'react-native-reanimated';
+import LinearGradient from 'react-native-linear-gradient';
+import ComponentTrack from '../components/componentTrack';
+import MusicPlayerModal from '../components/MusicPlayerModal';
 
 export default function AlbumScreen() {
     const { currentTrack, setCurrentTrack } = useContext(Player);
     const { currentAlbum, setCurrentAlbum } = useContext(Player);
+    const { modalVisible, setModalVisible } = useContext(Player);
     const [filled, setFilled] = useState(true);
 
     const toggleIcon = () => {
@@ -55,7 +58,6 @@ export default function AlbumScreen() {
         },
 
     ]
-    const [modalVisible, setModalVisible] = useState(false);
     const [activeCategory, setActiveCategory] = useState(null);
     const navigation = useNavigation();
     const { params } = useRoute();
@@ -98,7 +100,7 @@ export default function AlbumScreen() {
 
             <View className="bg-white flex-1">
                     <StatusBar barStyle="dark-content"></StatusBar>
-                <View style={{ backgroundColor: 'transparent' }} className="flex-row items-center sticky pt-6 pb-2 pr-6">
+                <View style={{ backgroundColor: 'white' }} className="flex-row items-center sticky pt-6 pb-2 pr-6">
 
                     <BackButton />
                     <TouchableOpacity className="flex justify-center items-center p-3 ml-auto bg-gray-200 rounded-full h-8 w-8">
@@ -106,7 +108,7 @@ export default function AlbumScreen() {
                     </TouchableOpacity>
                 </View>
 
-                <ScrollView className="mb-3">
+                <ScrollView>
 
                     <View className="flex justify-center items-center space-y-3 px-6">
                         <Image
@@ -180,147 +182,10 @@ export default function AlbumScreen() {
 
                     <View className="ml-6 border-t border-gray-100 mb-3" />
                 </ScrollView>
-                {currentTrack && (
-                    <TouchableOpacity onPress={() => { setModalVisible(!modalVisible) }}>
-                        <View style={{ width: '90%' }} className="bg-gray-100 mx-auto rounded-2xl sticky p-2 flex flex-row items-center justify-between bottom-3 shadow-2xl">
-                            <View className="flex-row justify-center items-center gap-3">
-                                <Image source={currentAlbum?.image} style={{ width: 50, height: 50 }} className="rounded-lg" />
-                                <Text numberOfLines={1} className="font-bold text-lg text-gray-950">
-                                    {currentTrack?.name}
-                                </Text>
-                            </View>
-                            <View className="flex-row gap-2 mr-3">
-                                <PauseIcon color="black" strokeWidth={2} stroke={200} size="30" />
-                                <ForwardIcon color="black" size="30" />
-                            </View>
-                        </View>
-                    </TouchableOpacity>
 
-                )}
-
-
-                <BottomModal
-                    visible={modalVisible}
-                    onHardWareBackPress={() => setModalVisible(false)}
-                    swipeDirection={["up", "down"]}
-                    swipeThreshold={1000}
-                    onSwipeOut={(event) => {
-                        setModalVisible(false)
-                    }}
-                    modalStyle={{ borderTopLeftRadius: 20, borderTopRightRadius: 20 }}
-                >
-                    <ModalContent className="h-full w-full bg-violet-100 flex">
-                        <View className="px-4">
-                            <TouchableOpacity onPress={()=>{setModalVisible(false)}} className="flex justify-center items-center my-6">
-                                <ChevronDownIcon color="black"></ChevronDownIcon>
-                            </TouchableOpacity>
-                            <ScrollView className="space-y-3" entering={FadeOutDown.delay(600).duration(1000).springify()}>
-                                <View className="flex-row w-full">
-                                    <View className="flex-row items-center gap-3">
-                                        <Image source={currentAlbum?.image} style={{ width: 80, height: 80 }} className="rounded-lg" />
-                                        <View>
-                                            <Text numberOfLines={1} className="font-bold text-lg text-gray-950">
-                                                {currentTrack?.name}
-                                            </Text>
-                                            <Text className=" text-gray-950 mb-3" style={{ marginTop: -8 }}>
-                                                {currentAlbum?.singer}
-                                            </Text>
-                                        </View>
-                                    </View>
-                                    <View className="flex-row justify-center items-center space-x-2 ml-auto">
-                                        <StarIcon color="black"></StarIcon>
-                                        <EllipsisHorizontalIcon color="black"></EllipsisHorizontalIcon>
-                                    </View>
-                                </View>
-                                <View className="flex-row w-full">
-                                    <View className="flex-row gap-3">
-
-                                        <View>
-                                            <Text numberOfLines={1} className="font-bold text-lg text-gray-950">
-                                                Playing Next
-                                            </Text>
-                                            {filled ? (
-                                                <Animated.Text entering={FadeIn.delay(100).duration(200)} exiting={FadeOut.delay(100).duration(200)} className=" text-gray-950 mb-3">
-                                                From {currentAlbum?.album}
-                                            </Animated.Text>
-                                            ) : (
-                                                <Text className=" text-gray-950 mb-3">
-                                                
-                                            </Text>
-                                            )}
-                                            
-                                        </View>
-                                    </View>
-                                    <View className="flex-row justify-center items-center space-x-2 ml-auto">
-                                        <TouchableOpacity onPress={toggleIcon}>
-                                            {filled ? (
-                                               <View style={{borderRadius:10}} className="bg-white p-2">
-                                               <ArrowPathRoundedSquareIcon color="black"/>
-                                               </View>
-                                            ) : (
-                                                 <View style={{borderRadius:10}} className="p-2">
-                                                 <ArrowPathRoundedSquareIcon color="black" />
-                                                 </View>
-                                            )}
-                                        </TouchableOpacity>
-                                    </View>
-                                 
-                                </View>
-                                <View style={{height:330}}>
-                                {filled == true && (
-                                    
-                                <Animated.ScrollView entering={FadeIn.delay(100).duration(200)} exiting={FadeOut.delay(100).duration(200)}>
-                                    {
-                        currentAlbum?.songs.map((song, index) => {
-                            
-                            if (song.id > currentTrack?.id) {
-                                return (
-                                
-                                    <Pressable onPress={()=>selectAndPlay(song)}>
-                                        <View key={index} className="flex-row items-center gap-3 mb-2">
-                                        <Image source={currentAlbum?.image} style={{ width: 55, height: 55 }} className="rounded-lg" />
-                                        <View className="">
-                                            <Text className="font-semibold text-lg text-gray-950">
-                                                {song.name}
-                                            </Text>
-                                            <Text className="font-semibold text-base text-gray-950" >
-                                                {currentAlbum?.singer}
-                                            </Text>
-                                        </View>
-                                    </View>
-                                    </Pressable>
-                                );
-                            } else {
-                                return null; // Skip rendering songs that come before the current track
-                            }
-                        })
-                    }
-                                    </Animated.ScrollView>
-                                   
-                                    )}
-                                     </View>
-                            </ScrollView>
-                        <View style={{height:10}} className="bg-gray-300 w-full mt-6 rounded-lg opacity-90">
-                            <View style={{width:'30%',borderTopLeftRadius:30,borderBottomLeftRadius:30}} className="bg-gray-50 h-full"></View>
-                        </View>
-                        <View className="flex-row justify-between mt-3">
-                        <Text>0:00</Text>
-                        <Text>0:40</Text>
-                        </View>
-                        </View>
-                        <View className="flex-row items-center justify-between mt-6 mx-14">
-                            <TouchableOpacity>
-                            <BackwardIcon size="40" color="black"></BackwardIcon>
-                            </TouchableOpacity>
-                            <TouchableOpacity>
-                            <PauseIcon size="50" strokeWidth={3} stroke={220} color="black"></PauseIcon>
-                            </TouchableOpacity>
-                            <TouchableOpacity>
-                            <ForwardIcon size="40" color="black"></ForwardIcon>
-                            </TouchableOpacity>
-                        </View>
-                    </ModalContent>
-                </BottomModal>
+                <ComponentTrack/>
+                
+                <MusicPlayerModal />
 
             </View>
 

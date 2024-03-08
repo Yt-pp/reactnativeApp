@@ -24,7 +24,7 @@ export default function MusicPlayerModal() {
                     visible={modalVisible}
                     onHardWareBackPress={() => setModalVisible(false)}
                     swipeDirection={["up", "down"]}
-                    swipeThreshold={1000}
+                    swipeThreshold={400}
                     onSwipeOut={(event) => {
                         setModalVisible(false)
                     }}
@@ -63,7 +63,7 @@ export default function MusicPlayerModal() {
                                                 Playing Next
                                             </Text>
                                             {filled ? (
-                                                <Animated.Text entering={FadeIn.delay(100).duration(200)} exiting={FadeOut.delay(100).duration(200)} className=" text-gray-950 mb-3">
+                                                <Animated.Text entering={FadeIn.delay(100).duration(200)} className=" text-gray-950 mb-3">
                                                 From {currentAlbum?.album}
                                             </Animated.Text>
                                             ) : (
@@ -94,7 +94,8 @@ export default function MusicPlayerModal() {
                                     
                                 <Animated.ScrollView 
                                 showsHorizontalScrollIndicator={false}
-                                entering={FadeIn.delay(100).duration(200)} exiting={FadeOut.delay(100).duration(200)}>
+                               
+                                >
                                     {
                         currentAlbum?.songs.map((song, index) => {
                             
@@ -102,7 +103,7 @@ export default function MusicPlayerModal() {
                                 return (
                                 
                                     <Pressable key={index} onPress={()=>{selectAndPlay(song)}}>
-                                        <Animated.View entering={FadeInDown.delay(100).duration(100*index).springify()} exiting={FadeOut.delay(10).duration(100)} key={index} className="flex-row items-center gap-3 mb-2">
+                                        <Animated.View entering={FadeInDown.delay(100).duration(100*index).springify()} key={index} className="flex-row items-center gap-3 mb-2">
                                         <Image source={currentAlbum?.image} style={{ width: 55, height: 55 }} className="rounded-lg" />
                                         <View className="">
                                             <Text className="font-semibold text-lg text-gray-950">

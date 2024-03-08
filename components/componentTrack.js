@@ -12,7 +12,7 @@ export default function ComponentTrack() {
   return (    
     <>
     {currentTrack && (
-        <TouchableOpacity onPress={() => { setModalVisible(!modalVisible) }}>
+        <TouchableOpacity onPress={() => { setModalVisible(true) }}>
             <View style={{ width: '90%' }} className="bg-gray-100 mx-auto rounded-2xl fixed p-2 flex flex-row items-center justify-between bottom-3 shadow-2xl mt-6">
                 <View className="flex-row justify-center items-center gap-3">
                     <Image source={currentAlbum?.image} style={{ width: 50, height: 50 }} className="rounded-lg" />

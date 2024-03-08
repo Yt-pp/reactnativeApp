@@ -207,7 +207,7 @@ export default function DetailScreen() {
             </View>
         </ScrollView>
 <ComponentTrack/>
-<MusicPlayerModal/>
+
     </View>
     
   )

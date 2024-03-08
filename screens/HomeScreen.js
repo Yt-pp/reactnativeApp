@@ -6,6 +6,8 @@ import imageSequence from '../assets/images/image'
 import EmptyList from '../components/emptyList'
 import { useNavigation } from '@react-navigation/core'
 import LinearGradient from 'react-native-linear-gradient'
+import ComponentTrack from '../components/componentTrack'
+import MusicPlayerModal from '../components/MusicPlayerModal'
 
 const items = [
   {
@@ -90,9 +92,17 @@ export default function HomeScreen() {
                     )
                   }}
               />
+            
           </View>
+          
       </View>
+      <View className="absolute -bottom-8 left-0 right-0 shadow-2xl">
+      <ComponentTrack />
+      </View>
+   <MusicPlayerModal/>
+      
    </ScreenWrapper>
+  
    </LinearGradient>
   )
 }

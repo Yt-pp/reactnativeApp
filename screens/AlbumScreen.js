@@ -1,16 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { View, Text, ScrollView, Image, TouchableOpacity, Pressable, StatusBar } from 'react-native';
+import { View, Text, ScrollView, Image, TouchableOpacity, StatusBar } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/core';
 import BackButton from '../components/backButton';
-import { BackwardIcon, ChevronDownIcon, ForwardIcon, PauseIcon, PlayIcon } from 'react-native-heroicons/solid';
-import { colors } from '../theme';
-import { ArrowPathRoundedSquareIcon, EllipsisHorizontalIcon, PlusIcon, StarIcon } from 'react-native-heroicons/outline';
+import { PlayIcon } from 'react-native-heroicons/solid';
+import { EllipsisHorizontalIcon, PlusIcon } from 'react-native-heroicons/outline';
 import { Player } from '../PlayContext';
-import { ModalContent } from "react-native-modals";
-import Animated, { FadeIn, FadeInDown, FadeOut, FadeOutDown, LightSpeedInLeft, SlideInDown, StretchInY } from 'react-native-reanimated';
-import LinearGradient from 'react-native-linear-gradient';
 import ComponentTrack from '../components/componentTrack';
-import MusicPlayerModal from '../components/MusicPlayerModal';
 
 export default function AlbumScreen() {
     const { currentTrack, setCurrentTrack } = useContext(Player);
@@ -83,8 +78,6 @@ export default function AlbumScreen() {
 
         await play(matchedAlbum.songs[0])
     };
-    console.log(currentTrack)
-    console.log(currentAlbum)
     console.log(modalVisible)
     const play = async () => {
 
@@ -185,11 +178,11 @@ export default function AlbumScreen() {
 
                 <ComponentTrack/>
                 
-                <MusicPlayerModal />
 
             </View>
 
 
+         
 
         </>
     );

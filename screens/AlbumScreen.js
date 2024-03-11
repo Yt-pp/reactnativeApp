@@ -6,6 +6,8 @@ import { PlayIcon } from 'react-native-heroicons/solid';
 import { EllipsisHorizontalIcon, PlusIcon } from 'react-native-heroicons/outline';
 import { Player } from '../PlayContext';
 import ComponentTrack from '../components/componentTrack';
+//import BlurView to make the Blur Background
+import {BlurView} from '@react-native-community/blur';
 
 export default function AlbumScreen() {
     const { currentTrack, setCurrentTrack } = useContext(Player);
@@ -90,18 +92,44 @@ export default function AlbumScreen() {
 
     return (
         <>
-
+  
             <View className="bg-white flex-1">
-                    <StatusBar barStyle="dark-content"></StatusBar>
-                <View style={{ backgroundColor: 'white' }} className="flex-row items-center sticky pt-6 pb-2 pr-6">
+            {/* <BlurView
+            style={{
+            height: 75,
+            position: 'absolute',
+            left: 0,
+            top: 0,
+            bottom: 0,
+            right: 0,
+        zIndex:4}}
+            blurType="light"
+            blurAmount={10}
+            blurRadius={15}
+            downsampleFactor={5}
+
+          
+          /> */}
+                <StatusBar barStyle="dark-content"></StatusBar>
+                <View style={{
+                    shadowColor: "#000",
+                    shadowOffset: {
+                        width: 0,
+                        height: 6,
+                    },
+                   
+                    shadowOpacity: 0.37,
+                    shadowRadius: 7.49,
+                    elevation: 12, zIndex: 5, backgroundColor: 'transparent'
+                }} className="flex-row items-center justify-between absolute pt-6 pb-2 pr-6 w-full">
 
                     <BackButton />
-                    <TouchableOpacity className="flex justify-center items-center p-3 ml-auto bg-gray-200 rounded-full h-8 w-8">
+                    <TouchableOpacity className="flex justify-center items-center p-3 ml-auto bg-gray-200 rounded-full h-8 w-8 left-0">
                         <PlusIcon strokeWidth={3} stroke={160} color="black" size="19"></PlusIcon>
                     </TouchableOpacity>
                 </View>
-
-                <ScrollView>
+              
+                <ScrollView contentContainerStyle={{ paddingTop:75,paddingBottom: currentTrack ? 100 : 0, }} style={{ overflow: 'hidden',}}>
 
                     <View className="flex justify-center items-center space-y-3 px-6">
                         <Image
@@ -176,13 +204,15 @@ export default function AlbumScreen() {
                     <View className="ml-6 border-t border-gray-100 mb-3" />
                 </ScrollView>
 
-                <ComponentTrack/>
-                
+
+                <ComponentTrack />
+
+
 
             </View>
 
 
-         
+
 
         </>
     );

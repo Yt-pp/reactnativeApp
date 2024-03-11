@@ -30,7 +30,7 @@ export default function MusicPlayerModal() {
                     }}
                     modalStyle={{ borderTopLeftRadius: 20, borderTopRightRadius: 20 }}
                 >
-                     <LinearGradient className="h-full w-full" colors={['#764BA2', '#3b5998', '#667EEA']}>
+                     <LinearGradient className="h-full w-full" colors={['#93A5CF', '#E4EfE9']}>
                     <ModalContent>
                        
                         <View className="px-4">
@@ -94,7 +94,7 @@ export default function MusicPlayerModal() {
                                     
                                 <Animated.ScrollView 
                                 showsHorizontalScrollIndicator={false}
-                               
+                    
                                 >
                                     {
                         currentAlbum?.songs.map((song, index) => {

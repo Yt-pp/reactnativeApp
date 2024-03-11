@@ -11,6 +11,7 @@ export default function ComponentTrack() {
 
   return (    
     <>
+     <View className="absolute bottom-2 left-0 right-0">
     {currentTrack && (
         <TouchableOpacity onPress={() => { setModalVisible(true) }}>
             <View style={{ width: '90%' }} className="bg-gray-100 mx-auto rounded-2xl fixed p-2 flex flex-row items-center justify-between bottom-3 shadow-2xl mt-6">
@@ -27,6 +28,7 @@ export default function ComponentTrack() {
             </View>
         </TouchableOpacity>
     )}
+    </View>
 </>
 
   )

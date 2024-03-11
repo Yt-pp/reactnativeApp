@@ -9,14 +9,20 @@ import SignUpScreen from '../screens/SignUpScreen';
 import DetailScreen from '../screens/DetailScreen';
 import AlbumScreen from '../screens/AlbumScreen';
 import MusicPlayerScreen from '../screens/MusicPlayerScreen';
+import SongScreen from '../screens/SongScreen';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'; 
+import { useContext } from 'react';
+import AuthContext from '../auth.user';
 
+const Tab = createBottomTabNavigator()
 const Stack = createNativeStackNavigator();
 
-export default function AppNavigation() {
+
+const HomeStack = () => {
+   
   return (
-    <NavigationContainer>
-    <Stack.Navigator initialRouteName="Home" screenOptions={{headerShown:false}}>
-      <Stack.Screen options={{headerShown:false}} name="Home" component={HomeScreen} />
+    <Stack.Navigator initialRouteName="HomeScreen" screenOptions={{headerShown:false}}>
+       <Stack.Screen options={{headerShown:false}} name="Home" component={HomeScreen} />
       <Stack.Screen options={{headerShown:false}} name="Welcome" component={WelcomeScreen} />
       <Stack.Screen options={{headerShown:false}} name="SignUp" component={SignUpScreen} />
       <Stack.Screen options={{headerShown:false}} name="Login" component={LoginScreen} />
@@ -24,8 +30,24 @@ export default function AppNavigation() {
       <Stack.Screen options={{headerShown:false}} name="AddExpense" component={AddExpenseScreen} />
       <Stack.Screen options={{headerShown:false}} name="Detail" component={DetailScreen} />
       <Stack.Screen options={{headerShown:false}} name="Album" component={AlbumScreen} />
-      <Stack.Screen options={{headerShown:false}} name="MusicPlayer" component={MusicPlayerScreen} />
     </Stack.Navigator>
+  )
+}
+
+export default function AppNavigation() {
+  const { isAuthenticated } = useContext(AuthContext);
+  return (
+    <NavigationContainer>
+  {isAuthenticated ? (
+        <Tab.Navigator screenOptions={{headerShown:false}}>
+          <Tab.Screen name="Home" component={HomeStack} />
+          {/* Only render the SongScreen if the user is authenticated */}
+          <Tab.Screen name="Search" component={SongScreen} />
+        </Tab.Navigator>
+      ) : (
+        <HomeStack />
+      )}
+
   </NavigationContainer>
   );
 }

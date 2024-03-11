@@ -1,5 +1,5 @@
 import { View, Text, TouchableOpacity, Image, FlatList } from 'react-native'
-import React from 'react'
+import React, { useContext } from 'react'
 import ScreenWrapper from '../components/screenWrapper'
 import { colors } from '../theme'
 import imageSequence from '../assets/images/image'
@@ -8,6 +8,8 @@ import { useNavigation } from '@react-navigation/core'
 import LinearGradient from 'react-native-linear-gradient'
 import ComponentTrack from '../components/componentTrack'
 import MusicPlayerModal from '../components/MusicPlayerModal'
+import { Player } from '../PlayContext'
+import AuthContext from '../auth.user'
 
 const items = [
   {
@@ -45,22 +47,30 @@ const items = [
 
 
 export default function HomeScreen() {
+  const { logout } = useContext(AuthContext);
+  const { currentTrack, setCurrentTrack } = useContext(Player);
   const navigation = useNavigation();
+  const handleLogout = () =>{
+    navigation.navigate('Login');
+    logout();
+  }
+  
   return (
     <LinearGradient className="flex-1" colors={['#aa4b6b', '#6b6b83', '#3b8d99']}>
     <ScreenWrapper>
     <View className="flex-row justify-between item-center p-4">
     <Text className={`${colors.heading} font-bold text-3xl shadow-sm text-white`}>First K-pop App</Text>
-    <TouchableOpacity onPress={()=>navigation.navigate('Login')} className="p-2 px-3 bg-white border border-gray-200 rounded-full">
+    <TouchableOpacity onPress={handleLogout} className="p-2 px-3 bg-white border border-gray-200 rounded-full">
         <Text className={colors.heading}>LogOut</Text>
     </TouchableOpacity>
     </View>
-    <View className="flex-row justify-center items-center bg-blue-200 rounded-xl mx-4 mb-4">
+    <TouchableOpacity onPress={()=>navigation.navigate('SearchSong')}>
+    <View className="flex-row justify-center items-center bg-white rounded-xl mx-4 mb-4">
       <Image source={require("../assets/images/Kpop.png")} className="w-60 h-60">
 
       </Image>
     </View>
-
+    </TouchableOpacity>
     <View className="px-4 space-y-3">
       <View className="flex-row justify-between items-center">
           <Text className={`${colors.heading} font-bold text-xl text-white`}>Recently Added</Text>
@@ -68,7 +78,7 @@ export default function HomeScreen() {
             <Text className={colors.heading}>Add Kpop</Text>
           </TouchableOpacity>
       </View>
-          <View style={{height:430}}>
+          <View style={{height:500}}>
               <FlatList
                   data={items}
                   ListEmptyComponent={<EmptyList message={"You haven't recorded any kpop star yet"} />}
@@ -76,8 +86,9 @@ export default function HomeScreen() {
                   keyExtractor={item=> item.id}
                   showsVerticalScrollIndicator={false}
                   columnWrapperStyle={{
-                    justifyContent: 'space-between'
+                    justifyContent: 'space-between',
                   }}
+                  contentContainerStyle={{ paddingBottom: currentTrack ? 120 : 0, }}
                   className="mx-1"
                   renderItem={({item})=>{
                     return (
@@ -96,13 +107,13 @@ export default function HomeScreen() {
           </View>
           
       </View>
-      <View className="absolute -bottom-8 left-0 right-0 shadow-2xl">
-      <ComponentTrack />
-      </View>
+      
    <MusicPlayerModal/>
       
    </ScreenWrapper>
-  
+   
+      <ComponentTrack />
+   
    </LinearGradient>
   )
 }

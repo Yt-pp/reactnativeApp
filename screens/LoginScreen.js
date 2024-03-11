@@ -1,13 +1,15 @@
 import { View, Text, TouchableOpacity, Image, TextInput } from 'react-native'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { colors } from '../theme'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { ArrowLeftIcon } from 'react-native-heroicons/outline'
 import { useNavigation } from '@react-navigation/core'
 import { ExclamationTriangleIcon } from 'react-native-heroicons/outline'
 import Animated, { FadeInDown, LightSpeedInLeft, SlideInDown, StretchInY, BounceInLeft } from 'react-native-reanimated';
+import AuthContext from '../auth.user'
 
 export default function LoginScreen() {
+  const { login } = useContext(AuthContext);
   const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -40,7 +42,8 @@ export default function LoginScreen() {
       // Reset input fields
       setEmail('');
       setPassword('');
-      // Handle login
+      // Handle 
+      login();
       navigation.navigate('Home');
     }
   };

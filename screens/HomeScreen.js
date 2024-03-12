@@ -64,7 +64,7 @@ export default function HomeScreen() {
         <Text className={colors.heading}>LogOut</Text>
     </TouchableOpacity>
     </View>
-    <TouchableOpacity onPress={()=>navigation.navigate('SearchSong')}>
+    <TouchableOpacity>
     <View className="flex-row justify-center items-center bg-white rounded-xl mx-4 mb-4">
       <Image source={require("../assets/images/Kpop.png")} className="w-60 h-60">
 
@@ -88,7 +88,7 @@ export default function HomeScreen() {
                   columnWrapperStyle={{
                     justifyContent: 'space-between',
                   }}
-                  contentContainerStyle={{ paddingBottom: currentTrack ? 120 : 0, }}
+                  contentContainerStyle={{ paddingBottom: currentTrack ? 180 : 90, }}
                   className="mx-1"
                   renderItem={({item})=>{
                     return (

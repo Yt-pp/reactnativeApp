@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.awesomeproject.app-mergeDebugResources-35:/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "outputFile": "com.awesomeproject.app-mergeDebugResources-39:/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
                     "source": "C:\\Users\\teoyt\\.gradle\\caches\\transforms-3\\b3627ca143232ec2ceb6e319eb18971d\\transformed\\appcompat-1.6.1\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",

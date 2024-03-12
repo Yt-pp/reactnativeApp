@@ -11,8 +11,14 @@ import com.facebook.react.shell.MainReactPackage;
 import java.util.Arrays;
 import java.util.ArrayList;
 
+// @react-native-async-storage/async-storage
+import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 // @react-native-community/blur
 import com.reactnativecommunity.blurview.BlurViewPackage;
+// react-native-app-auth
+import com.rnappauth.RNAppAuthPackage;
+// react-native-device-info
+import com.learnium.RNDeviceInfo.RNDeviceInfo;
 // react-native-linear-gradient
 import com.BV.LinearGradient.LinearGradientPackage;
 // react-native-reanimated
@@ -70,7 +76,10 @@ public class PackageList {
   public ArrayList<ReactPackage> getPackages() {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
       new MainReactPackage(mConfig),
+      new AsyncStoragePackage(),
       new BlurViewPackage(),
+      new RNAppAuthPackage(),
+      new RNDeviceInfo(),
       new LinearGradientPackage(),
       new ReanimatedPackage(),
       new SafeAreaContextPackage(),

@@ -1,11 +1,11 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { View, Text, ScrollView, Image, TouchableOpacity, Pressable } from 'react-native';
 import { BackwardIcon, ChevronDownIcon, ForwardIcon, PauseIcon } from 'react-native-heroicons/solid';
 import { ArrowPathRoundedSquareIcon, EllipsisHorizontalIcon, StarIcon } from 'react-native-heroicons/outline';
 import { Player } from '../PlayContext';
 import { BottomModal} from "react-native-modals";
 import { ModalContent } from "react-native-modals";
-import Animated, { FadeIn, FadeInDown, FadeOut, FadeOutDown, SlideInDown, SlideOutUp } from 'react-native-reanimated';
+import Animated, { FadeIn, FadeInDown, FadeOutDown } from 'react-native-reanimated';
 import LinearGradient from 'react-native-linear-gradient';
 
 export default function MusicPlayerModal() {
@@ -127,7 +127,7 @@ export default function MusicPlayerModal() {
                                      </View>
                             </ScrollView>
                         <View style={{height:10}} className="bg-gray-300 w-full mt-6 rounded-lg opacity-90">
-                            <View style={{width:'30%',borderTopLeftRadius:30,borderBottomLeftRadius:30}} className="bg-gray-50 h-full"></View>
+                            <View style={{width:'30%',borderTopLeftRadius:30,borderBottomLeftRadius:30}} className="bg-gray-100 h-full"></View>
                         </View>
                         <View className="flex-row justify-between mt-3">
                         <Text>0:00</Text>

@@ -129,7 +129,7 @@ export default function AlbumScreen() {
                     </TouchableOpacity>
                 </View>
               
-                <ScrollView contentContainerStyle={{ paddingTop:75,paddingBottom: currentTrack ? 100 : 0, }} style={{ overflow: 'hidden',}}>
+                <ScrollView contentContainerStyle={{ paddingTop:75,paddingBottom: currentTrack ? 140 : 60, }} style={{ overflow: 'hidden',}}>
 
                     <View className="flex justify-center items-center space-y-3 px-6">
                         <Image

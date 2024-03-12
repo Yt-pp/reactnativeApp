@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.awesomeproject.app-mergeDebugResources-35:/values-ku/values-ku.xml",
+            "outputFile": "com.awesomeproject.app-mergeDebugResources-39:/values-ku/values-ku.xml",
             "map": [
                 {
                     "source": "C:\\Users\\teoyt\\.gradle\\caches\\transforms-3\\b4db2f23f2ab214a51186ce21dfe946e\\transformed\\jetified-react-android-0.73.4-debug\\res\\values-ku\\values-ku.xml",

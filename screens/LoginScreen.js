@@ -1,5 +1,5 @@
 import { View, Text, TouchableOpacity, Image, TextInput } from 'react-native'
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { colors } from '../theme'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { ArrowLeftIcon } from 'react-native-heroicons/outline'
@@ -7,8 +7,57 @@ import { useNavigation } from '@react-navigation/core'
 import { ExclamationTriangleIcon } from 'react-native-heroicons/outline'
 import Animated, { FadeInDown, LightSpeedInLeft, SlideInDown, StretchInY, BounceInLeft } from 'react-native-reanimated';
 import AuthContext from '../auth.user'
+import { authorize } from 'react-native-app-auth';
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export default function LoginScreen() {
+  useEffect(() => {
+    const checkTokenValidity = async () => {
+      const accessToken = await AsyncStorage.getItem("token");
+      const expirationDate = await AsyncStorage.getItem("expirationDate");
+      console.log("access token", accessToken);
+      console.log("expiration date",expirationDate);
+
+      if(accessToken && expirationDate){
+        const currentTime = Date.now();
+        if(currentTime < parseInt(expirationDate)){
+          
+        }else{
+          AsyncStorage.removeItem("token");
+          AsyncStorage.removeItem("expirationDate");
+        }
+      }
+    }
+    checkTokenValidity();
+  })
+  async function authenticate () {
+      const config = {
+        issuer:"https://accounts.spotify.com",
+        clientId:"a96b92afc71b49f89ea3509afe0ee718",
+        scopes: [
+          "user-read-email",
+          "user-library-read",
+          "user-read-recently-played",
+          "user-top-read",
+          "playlist-read-private",
+          "playlist-read-collaborative",
+          "playlist-modify-public"
+        ],
+        redirectUrl:"http://localhost:8081",
+        serviceConfiguration: {
+          authorizationEndpoint: 'https://accounts.spotify.com/authorize',
+          tokenEndpoint: 'https://accounts.spotify.com/api/token',
+        },
+      }
+      const result = await authorize(config);
+      console.log(result);
+      if(result.accessToken){
+        const expirationDate = new Date(result.accessTokenExpirationDate).getTime();
+        AsyncStorage.setItem("token",result.accessToken);
+        AsyncStorage.setItem("expirationDate",expirationDate.toString());
+      }
+  }
+
   const { login } = useContext(AuthContext);
   const navigation = useNavigation();
   const [email, setEmail] = useState('');
@@ -44,7 +93,6 @@ export default function LoginScreen() {
       setPassword('');
       // Handle 
       login();
-      navigation.navigate('Home');
     }
   };
   
@@ -124,7 +172,7 @@ export default function LoginScreen() {
             Or
           </Animated.Text>
           <Animated.View entering={FadeInDown.delay(900).duration(1000).springify()} className="flex-row justify-center space-x-12 mb-7">
-            <TouchableOpacity className="p-2 bg-gray-100 rounded-2xl">
+            <TouchableOpacity onPress={authenticate} className="p-2 bg-gray-100 rounded-2xl">
             <Image source={require("../assets/images/googleIcon.png")}
             className="w-10 h-10">
             </Image>

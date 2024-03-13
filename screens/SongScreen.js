@@ -1,10 +1,11 @@
 import { View, Text, TextInput, TouchableOpacity, Keyboard, Image, Modal, Pressable, StatusBar } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ScrollView } from 'react-native'
 import { EllipsisHorizontalIcon, MagnifyingGlassIcon, XCircleIcon } from 'react-native-heroicons/solid'
 import Animated, { useAnimatedStyle, useSharedValue, withSpring, FadeIn, FadeOut, withTiming, runOnJS } from 'react-native-reanimated'
 import ScreenWrapper from '../components/screenWrapper'
 import ComponentTrack from '../components/componentTrack'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const categories = [
     { name: "Example1", image: require('../assets/images/LE-SSERAFIM.jpg') },
@@ -28,11 +29,38 @@ const searchHistories = [
     { name: "Example 3", image: require('../assets/images/LE-SSERAFIM.jpg'), artists: "LE-SSERAFIM" },
     { name: "Example 4", image: require('../assets/images/LE-SSERAFIM.jpg'), artists: "LE-SSERAFIM" },
 ]
+
+
+
 export default function SongScreen() {
     const [indexToAnimate, setIndexToAnimate] = useState(null);
     const [isFocused, setIsFocused] = useState(false);
     const [textInputValue, setTextInputValue] = useState('');
     const [modalVisible, setModalVisible] = useState(false);
+
+    const [userProfile,setUserProfile] = useState([]);
+
+const getProfile = async () => {
+    const accessToken = await AsyncStorage.getItem("token");
+    console.log(accessToken)
+    try{
+        const response = await fetch("https://api.spotify.com/v1/me",{
+            headers:{
+                Authorization: `Bearer ${accessToken}`
+            }
+        })
+        const data = await response.json();
+        setUserProfile(data);
+        return data;
+    }catch(error){
+        console.log(error.message)
+    }
+};
+
+useEffect(() => {
+    getProfile();
+},[])
+console.log(userProfile)
 
     // Animated value to control the scale of the item on long press
     const scale = useSharedValue(1);
@@ -89,11 +117,14 @@ export default function SongScreen() {
                     <View className="px-6">
                     {!isFocused && (<View className="flex-row items-center justify-between mt-4">
                         <Text className="text-4xl text-black font-bold">Search Song</Text>
-                        <View
-                            style={{ width: 40, height: 40 }}
-                            className="bg-gray-400 rounded-full">
-
-                        </View>
+                        
+                            {userProfile?.images ?(<Image style={{ width: 40, height: 40 }} className="bg-gray-400 rounded-full" source={{uri:userProfile?.images[0].url}}></Image>):
+                            (<View
+                                style={{ width: 40, height: 40 }}
+                                className="bg-gray-400 rounded-full">
+                                     </View>)
+                            }
+                       
                     </View>)}
                     <View className="flex-row items-center mt-3">
                         <View
@@ -181,7 +212,7 @@ export default function SongScreen() {
                                 exiting={FadeOut.delay(40).duration(90)} 
                                 className="mt-3 space-y-2 px-6"
                                 contentContainerStyle={{
-                                    paddingBottom:180
+                                    paddingBottom:270
                                 }}>
                                 <Text className="text-xl text-black font-semibold">K-Pop Categories</Text>
                                 <View style={{ flexDirection: 'row', flexWrap: 'wrap', alignItems: 'flex-start' }} className="flex justify-between">

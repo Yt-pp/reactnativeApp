@@ -40,13 +40,14 @@ export default function MusicPlayerModal() {
                             <ScrollView className="space-y-3" entering={FadeOutDown.delay(600).duration(1000).springify()}>
                                 <View className="flex-row w-full">
                                     <View className="flex-row items-center gap-3">
-                                        <Image source={currentAlbum?.image} style={{ width: 80, height: 80 }} className="rounded-lg" />
+                                        {/* <Image source={currentAlbum?.image} style={{ width: 80, height: 80 }} className="rounded-lg" /> */}
+                                        <Image source={{uri:currentTrack?.track.album.images[0].url}} style={{ width: 80, height: 80 }} className="rounded-lg" />
                                         <View>
                                             <Text numberOfLines={1} className="font-bold text-lg text-gray-950">
-                                                {currentTrack?.name}
+                                                {currentTrack?.track.name}
                                             </Text>
-                                            <Text className=" text-gray-950 mb-3" style={{ marginTop: -8 }}>
-                                                {currentAlbum?.singer}
+                                            <Text className=" text-gray-950 mb-3" style={{ marginTop: -2 }}>
+                                                {currentTrack?.track.album.artists[0].name}
                                             </Text>
                                         </View>
                                     </View>

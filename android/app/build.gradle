@@ -82,7 +82,7 @@ android {
         versionCode 1
         versionName "1.0"
          // place correct redirectScheme~
-    manifestPlaceholders = [appAuthRedirectScheme: 'com.redirectScheme.comm']
+    manifestPlaceholders = [appAuthRedirectScheme: 'com.awesomeproject']
     }
     signingConfigs {
         debug {

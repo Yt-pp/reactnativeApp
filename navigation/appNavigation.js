@@ -13,14 +13,13 @@ import SongScreen from '../screens/SongScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useContext } from 'react';
 import AuthContext from '../auth.user';
-import { Dimensions, View } from 'react-native';
+import { Dimensions, StatusBar, View } from 'react-native';
 import { HomeIcon, MagnifyingGlassIcon, MusicalNoteIcon } from 'react-native-heroicons/solid';
 import LibraryScreen from '../screens/LibraryScreen';
 
-const { width, height } = Dimensions.get("window")
+const { width, height } = Dimensions.get("screen")
 const Tab = createBottomTabNavigator()
 const Stack = createNativeStackNavigator();
-
 
 const HomeStack = () => {
 
@@ -55,6 +54,9 @@ const TabArr = [
   { route: 'MusicLibraryScreen', label: 'Library', stack:LibraryScreen, icon: MusicalNoteIcon }
 ]
 
+
+let statusBarHeight = StatusBar.currentHeight;
+
 export default function AppNavigation() {
   const { isAuthenticated } = useContext(AuthContext);
   return (
@@ -71,8 +73,8 @@ export default function AppNavigation() {
                   position: 'absolute', 
                   bottom: 0,
                   padding: 5,
-                  paddingBottom:10,
-                  height:60,
+                  paddingBottom:30,
+                  height:80,
               },
               tabBarActiveTintColor: '#FF4D4D'
              }}

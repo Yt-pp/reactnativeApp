@@ -442,9 +442,15 @@ ADDED from [net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-
 	android:name
 		ADDED from [net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:42:13-74
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:${appAuthRedirectScheme}
+<<<<<<< HEAD
 ADDED from [net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:44:13-51:29
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:com.redirectScheme.comm
 ADDED from [net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:44:13-51:29
+=======
+ADDED from [net.openid:appauth:0.11.1] C:\Users\teoyt\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:44:13-51:29
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:com.awesomeproject
+ADDED from [net.openid:appauth:0.11.1] C:\Users\teoyt\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:44:13-51:29
+>>>>>>> 27a07bcad1e64501e90c09d7add4549a410f68a5
 category#android.intent.category.DEFAULT
 ADDED from [net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:47:17-76
 	android:name

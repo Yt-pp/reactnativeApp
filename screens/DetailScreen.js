@@ -81,7 +81,7 @@ export default function DetailScreen() {
     return (
 
         <View className="bg-white flex-1">
-            <ScrollView contentContainerStyle={{ paddingBottom: currentTrack ? 150 : 80, }}>
+            <ScrollView contentContainerStyle={{ paddingBottom: currentTrack ? 160 : 80, }}>
                 <View className="relative">
                     <Image className="w-full h-72" source={imageSequence(item.id)}></Image>
                     <View className="absolute top-10 left-5">

@@ -78,7 +78,7 @@ export default function HomeScreen() {
             <Text className={colors.heading}>Add Kpop</Text>
           </TouchableOpacity>
       </View>
-          <View style={{height:500}}>
+          <View style={{height:450}}>
               <FlatList
                   data={items}
                   ListEmptyComponent={<EmptyList message={"You haven't recorded any kpop star yet"} />}
@@ -88,13 +88,13 @@ export default function HomeScreen() {
                   columnWrapperStyle={{
                     justifyContent: 'space-between',
                   }}
-                  contentContainerStyle={{ paddingBottom: currentTrack ? 180 : 90, }}
+                  contentContainerStyle={{ paddingBottom: currentTrack ? 150 : 80, }}
                   className="mx-1"
                   renderItem={({item})=>{
                     return (
-                      <TouchableOpacity onPress={()=> {navigation.navigate('Detail', {...item})}} className="bg-white p-3 rounded-2xl mb-3 shadow-sm">
+                      <TouchableOpacity onPress={()=> {navigation.navigate('Detail', {...item})}} className="bg-white p-3 rounded-2xl mb-3 shadow-sm" style={{width:'48%'}}>
                         <View>
-                          <Image source={imageSequence(item.id)} style={{width:155}} className="h-40 mb-2"></Image>
+                          <Image source={imageSequence(item.id)} style={{width:'100%'}} className="h-40 mb-2"></Image>
                           <Text className={`${colors.heading} font-bold`}>{item.name}</Text>
                           <Text className={`${colors.heading} text-xs`}>{item.team}</Text>
                         </View>

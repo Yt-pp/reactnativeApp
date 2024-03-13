@@ -139,9 +139,15 @@
 77-->[net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:28:13-74
 77-->[net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:28:23-71
 78
+<<<<<<< HEAD
 79                <data android:scheme="com.redirectScheme.comm" />
 79-->[net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:30:13-44
 79-->[net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:30:19-41
+=======
+79                <data android:scheme="com.awesomeproject" />
+79-->[net.openid:appauth:0.11.1] C:\Users\teoyt\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:30:13-44
+79-->[net.openid:appauth:0.11.1] C:\Users\teoyt\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:30:19-41
+>>>>>>> 27a07bcad1e64501e90c09d7add4549a410f68a5
 80            </intent-filter>
 81        </activity>
 82        <activity

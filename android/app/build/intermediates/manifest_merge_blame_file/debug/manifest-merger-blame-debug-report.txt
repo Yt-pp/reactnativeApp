@@ -9,185 +9,185 @@
 9        android:targetSdkVersion="34" />
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->C:\Users\teoyt\Desktop\TestReact\reactnativeApp\android\app\src\main\AndroidManifest.xml:3:5-67
-11-->C:\Users\teoyt\Desktop\TestReact\reactnativeApp\android\app\src\main\AndroidManifest.xml:3:22-64
+11-->C:\Users\TeoYT\Desktop\reactNative\reactnativeApp\android\app\src\main\AndroidManifest.xml:3:5-67
+11-->C:\Users\TeoYT\Desktop\reactNative\reactnativeApp\android\app\src\main\AndroidManifest.xml:3:22-64
 12    <!--
 13    This manifest file is used only by Gradle to configure debug-only capabilities
 14    for React Native Apps.
 15    -->
 16    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-16-->[com.facebook.react:react-android:0.73.4] C:\Users\teoyt\.gradle\caches\transforms-3\b4db2f23f2ab214a51186ce21dfe946e\transformed\jetified-react-android-0.73.4-debug\AndroidManifest.xml:16:5-78
-16-->[com.facebook.react:react-android:0.73.4] C:\Users\teoyt\.gradle\caches\transforms-3\b4db2f23f2ab214a51186ce21dfe946e\transformed\jetified-react-android-0.73.4-debug\AndroidManifest.xml:16:22-75
+16-->[com.facebook.react:react-android:0.73.4] C:\Users\TeoYT\.gradle\caches\transforms-3\b4db2f23f2ab214a51186ce21dfe946e\transformed\jetified-react-android-0.73.4-debug\AndroidManifest.xml:16:5-78
+16-->[com.facebook.react:react-android:0.73.4] C:\Users\TeoYT\.gradle\caches\transforms-3\b4db2f23f2ab214a51186ce21dfe946e\transformed\jetified-react-android-0.73.4-debug\AndroidManifest.xml:16:22-75
 17    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-17-->[com.facebook.flipper:flipper:0.201.0] C:\Users\teoyt\.gradle\caches\transforms-3\9b2c28bd5719adb7e465469e2ca76c12\transformed\jetified-flipper-0.201.0\AndroidManifest.xml:14:5-76
-17-->[com.facebook.flipper:flipper:0.201.0] C:\Users\teoyt\.gradle\caches\transforms-3\9b2c28bd5719adb7e465469e2ca76c12\transformed\jetified-flipper-0.201.0\AndroidManifest.xml:14:22-73
+17-->[com.facebook.flipper:flipper:0.201.0] C:\Users\TeoYT\.gradle\caches\transforms-3\9b2c28bd5719adb7e465469e2ca76c12\transformed\jetified-flipper-0.201.0\AndroidManifest.xml:14:5-76
+17-->[com.facebook.flipper:flipper:0.201.0] C:\Users\TeoYT\.gradle\caches\transforms-3\9b2c28bd5719adb7e465469e2ca76c12\transformed\jetified-flipper-0.201.0\AndroidManifest.xml:14:22-73
 18
 19    <queries>
-19-->[net.openid:appauth:0.11.1] C:\Users\teoyt\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:24:5-32:15
+19-->[net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:24:5-32:15
 20        <intent>
-20-->[net.openid:appauth:0.11.1] C:\Users\teoyt\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:25:9-31:18
+20-->[net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:25:9-31:18
 21            <action android:name="android.intent.action.VIEW" />
-21-->[net.openid:appauth:0.11.1] C:\Users\teoyt\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:26:13-65
-21-->[net.openid:appauth:0.11.1] C:\Users\teoyt\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:26:21-62
+21-->[net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:26:13-65
+21-->[net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:26:21-62
 22
 23            <category android:name="android.intent.category.BROWSABLE" />
-23-->[net.openid:appauth:0.11.1] C:\Users\teoyt\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:28:13-74
-23-->[net.openid:appauth:0.11.1] C:\Users\teoyt\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:28:23-71
+23-->[net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:28:13-74
+23-->[net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:28:23-71
 24
 25            <data android:scheme="https" />
-25-->[net.openid:appauth:0.11.1] C:\Users\teoyt\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:30:13-44
-25-->[net.openid:appauth:0.11.1] C:\Users\teoyt\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:30:19-41
+25-->[net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:30:13-44
+25-->[net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:30:19-41
 26        </intent>
 27    </queries> <!-- Required by older versions of Google Play services to create IID tokens -->
 28    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-28-->[com.google.android.gms:play-services-iid:17.0.0] C:\Users\teoyt\.gradle\caches\transforms-3\7d00a3d973e62c64256363b4cb614082\transformed\jetified-play-services-iid-17.0.0\AndroidManifest.xml:23:5-82
-28-->[com.google.android.gms:play-services-iid:17.0.0] C:\Users\teoyt\.gradle\caches\transforms-3\7d00a3d973e62c64256363b4cb614082\transformed\jetified-play-services-iid-17.0.0\AndroidManifest.xml:23:22-79
+28-->[com.google.android.gms:play-services-iid:17.0.0] C:\Users\TeoYT\.gradle\caches\transforms-3\7d00a3d973e62c64256363b4cb614082\transformed\jetified-play-services-iid-17.0.0\AndroidManifest.xml:23:5-82
+28-->[com.google.android.gms:play-services-iid:17.0.0] C:\Users\TeoYT\.gradle\caches\transforms-3\7d00a3d973e62c64256363b4cb614082\transformed\jetified-play-services-iid-17.0.0\AndroidManifest.xml:23:22-79
 29
 30    <permission
-30-->[androidx.core:core:1.9.0] C:\Users\teoyt\.gradle\caches\transforms-3\13659b94c66de92d98d7f8af61234b95\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+30-->[androidx.core:core:1.9.0] C:\Users\TeoYT\.gradle\caches\transforms-3\13659b94c66de92d98d7f8af61234b95\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
 31        android:name="com.awesomeproject.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-31-->[androidx.core:core:1.9.0] C:\Users\teoyt\.gradle\caches\transforms-3\13659b94c66de92d98d7f8af61234b95\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+31-->[androidx.core:core:1.9.0] C:\Users\TeoYT\.gradle\caches\transforms-3\13659b94c66de92d98d7f8af61234b95\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
 32        android:protectionLevel="signature" />
-32-->[androidx.core:core:1.9.0] C:\Users\teoyt\.gradle\caches\transforms-3\13659b94c66de92d98d7f8af61234b95\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+32-->[androidx.core:core:1.9.0] C:\Users\TeoYT\.gradle\caches\transforms-3\13659b94c66de92d98d7f8af61234b95\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
 33
 34    <uses-permission android:name="com.awesomeproject.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-34-->[androidx.core:core:1.9.0] C:\Users\teoyt\.gradle\caches\transforms-3\13659b94c66de92d98d7f8af61234b95\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
-34-->[androidx.core:core:1.9.0] C:\Users\teoyt\.gradle\caches\transforms-3\13659b94c66de92d98d7f8af61234b95\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+34-->[androidx.core:core:1.9.0] C:\Users\TeoYT\.gradle\caches\transforms-3\13659b94c66de92d98d7f8af61234b95\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+34-->[androidx.core:core:1.9.0] C:\Users\TeoYT\.gradle\caches\transforms-3\13659b94c66de92d98d7f8af61234b95\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
 35    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
-35-->[com.android.installreferrer:installreferrer:1.1.2] C:\Users\teoyt\.gradle\caches\transforms-3\7347c325151bfcdf75aa8769efa26987\transformed\jetified-installreferrer-1.1.2\AndroidManifest.xml:9:5-110
-35-->[com.android.installreferrer:installreferrer:1.1.2] C:\Users\teoyt\.gradle\caches\transforms-3\7347c325151bfcdf75aa8769efa26987\transformed\jetified-installreferrer-1.1.2\AndroidManifest.xml:9:22-107
+35-->[com.android.installreferrer:installreferrer:1.1.2] C:\Users\TeoYT\.gradle\caches\transforms-3\7347c325151bfcdf75aa8769efa26987\transformed\jetified-installreferrer-1.1.2\AndroidManifest.xml:9:5-110
+35-->[com.android.installreferrer:installreferrer:1.1.2] C:\Users\TeoYT\.gradle\caches\transforms-3\7347c325151bfcdf75aa8769efa26987\transformed\jetified-installreferrer-1.1.2\AndroidManifest.xml:9:22-107
 36
 37    <application
-37-->C:\Users\teoyt\Desktop\TestReact\reactnativeApp\android\app\src\main\AndroidManifest.xml:5:5-24:19
+37-->C:\Users\TeoYT\Desktop\reactNative\reactnativeApp\android\app\src\main\AndroidManifest.xml:5:5-24:19
 38        android:name="com.awesomeproject.MainApplication"
-38-->C:\Users\teoyt\Desktop\TestReact\reactnativeApp\android\app\src\main\AndroidManifest.xml:6:7-38
+38-->C:\Users\TeoYT\Desktop\reactNative\reactnativeApp\android\app\src\main\AndroidManifest.xml:6:7-38
 39        android:allowBackup="false"
-39-->C:\Users\teoyt\Desktop\TestReact\reactnativeApp\android\app\src\main\AndroidManifest.xml:10:7-34
+39-->C:\Users\TeoYT\Desktop\reactNative\reactnativeApp\android\app\src\main\AndroidManifest.xml:10:7-34
 40        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-40-->[androidx.core:core:1.9.0] C:\Users\teoyt\.gradle\caches\transforms-3\13659b94c66de92d98d7f8af61234b95\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+40-->[androidx.core:core:1.9.0] C:\Users\TeoYT\.gradle\caches\transforms-3\13659b94c66de92d98d7f8af61234b95\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
 41        android:debuggable="true"
 42        android:extractNativeLibs="true"
 43        android:icon="@mipmap/ic_launcher"
-43-->C:\Users\teoyt\Desktop\TestReact\reactnativeApp\android\app\src\main\AndroidManifest.xml:8:7-41
+43-->C:\Users\TeoYT\Desktop\reactNative\reactnativeApp\android\app\src\main\AndroidManifest.xml:8:7-41
 44        android:label="@string/app_name"
-44-->C:\Users\teoyt\Desktop\TestReact\reactnativeApp\android\app\src\main\AndroidManifest.xml:7:7-39
+44-->C:\Users\TeoYT\Desktop\reactNative\reactnativeApp\android\app\src\main\AndroidManifest.xml:7:7-39
 45        android:roundIcon="@mipmap/ic_launcher_round"
-45-->C:\Users\teoyt\Desktop\TestReact\reactnativeApp\android\app\src\main\AndroidManifest.xml:9:7-52
+45-->C:\Users\TeoYT\Desktop\reactNative\reactnativeApp\android\app\src\main\AndroidManifest.xml:9:7-52
 46        android:theme="@style/AppTheme"
-46-->C:\Users\teoyt\Desktop\TestReact\reactnativeApp\android\app\src\main\AndroidManifest.xml:11:7-38
+46-->C:\Users\TeoYT\Desktop\reactNative\reactnativeApp\android\app\src\main\AndroidManifest.xml:11:7-38
 47        android:usesCleartextTraffic="true" >
-47-->C:\Users\teoyt\Desktop\TestReact\reactnativeApp\android\app\src\debug\AndroidManifest.xml:6:9-44
+47-->C:\Users\TeoYT\Desktop\reactNative\reactnativeApp\android\app\src\debug\AndroidManifest.xml:6:9-44
 48        <activity
-48-->C:\Users\teoyt\Desktop\TestReact\reactnativeApp\android\app\src\main\AndroidManifest.xml:12:7-23:18
+48-->C:\Users\TeoYT\Desktop\reactNative\reactnativeApp\android\app\src\main\AndroidManifest.xml:12:7-23:18
 49            android:name="com.awesomeproject.MainActivity"
-49-->C:\Users\teoyt\Desktop\TestReact\reactnativeApp\android\app\src\main\AndroidManifest.xml:13:9-37
+49-->C:\Users\TeoYT\Desktop\reactNative\reactnativeApp\android\app\src\main\AndroidManifest.xml:13:9-37
 50            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-50-->C:\Users\teoyt\Desktop\TestReact\reactnativeApp\android\app\src\main\AndroidManifest.xml:15:9-118
+50-->C:\Users\TeoYT\Desktop\reactNative\reactnativeApp\android\app\src\main\AndroidManifest.xml:15:9-118
 51            android:exported="true"
-51-->C:\Users\teoyt\Desktop\TestReact\reactnativeApp\android\app\src\main\AndroidManifest.xml:18:9-32
+51-->C:\Users\TeoYT\Desktop\reactNative\reactnativeApp\android\app\src\main\AndroidManifest.xml:18:9-32
 52            android:label="@string/app_name"
-52-->C:\Users\teoyt\Desktop\TestReact\reactnativeApp\android\app\src\main\AndroidManifest.xml:14:9-41
+52-->C:\Users\TeoYT\Desktop\reactNative\reactnativeApp\android\app\src\main\AndroidManifest.xml:14:9-41
 53            android:launchMode="singleTask"
-53-->C:\Users\teoyt\Desktop\TestReact\reactnativeApp\android\app\src\main\AndroidManifest.xml:16:9-40
+53-->C:\Users\TeoYT\Desktop\reactNative\reactnativeApp\android\app\src\main\AndroidManifest.xml:16:9-40
 54            android:windowSoftInputMode="adjustResize" >
-54-->C:\Users\teoyt\Desktop\TestReact\reactnativeApp\android\app\src\main\AndroidManifest.xml:17:9-51
+54-->C:\Users\TeoYT\Desktop\reactNative\reactnativeApp\android\app\src\main\AndroidManifest.xml:17:9-51
 55            <intent-filter>
-55-->C:\Users\teoyt\Desktop\TestReact\reactnativeApp\android\app\src\main\AndroidManifest.xml:19:9-22:25
+55-->C:\Users\TeoYT\Desktop\reactNative\reactnativeApp\android\app\src\main\AndroidManifest.xml:19:9-22:25
 56                <action android:name="android.intent.action.MAIN" />
-56-->C:\Users\teoyt\Desktop\TestReact\reactnativeApp\android\app\src\main\AndroidManifest.xml:20:13-65
-56-->C:\Users\teoyt\Desktop\TestReact\reactnativeApp\android\app\src\main\AndroidManifest.xml:20:21-62
+56-->C:\Users\TeoYT\Desktop\reactNative\reactnativeApp\android\app\src\main\AndroidManifest.xml:20:13-65
+56-->C:\Users\TeoYT\Desktop\reactNative\reactnativeApp\android\app\src\main\AndroidManifest.xml:20:21-62
 57
 58                <category android:name="android.intent.category.LAUNCHER" />
-58-->C:\Users\teoyt\Desktop\TestReact\reactnativeApp\android\app\src\main\AndroidManifest.xml:21:13-73
-58-->C:\Users\teoyt\Desktop\TestReact\reactnativeApp\android\app\src\main\AndroidManifest.xml:21:23-70
+58-->C:\Users\TeoYT\Desktop\reactNative\reactnativeApp\android\app\src\main\AndroidManifest.xml:21:13-73
+58-->C:\Users\TeoYT\Desktop\reactNative\reactnativeApp\android\app\src\main\AndroidManifest.xml:21:23-70
 59            </intent-filter>
 60        </activity>
 61        <activity
-61-->[com.facebook.react:react-android:0.73.4] C:\Users\teoyt\.gradle\caches\transforms-3\b4db2f23f2ab214a51186ce21dfe946e\transformed\jetified-react-android-0.73.4-debug\AndroidManifest.xml:19:9-21:40
+61-->[com.facebook.react:react-android:0.73.4] C:\Users\TeoYT\.gradle\caches\transforms-3\b4db2f23f2ab214a51186ce21dfe946e\transformed\jetified-react-android-0.73.4-debug\AndroidManifest.xml:19:9-21:40
 62            android:name="com.facebook.react.devsupport.DevSettingsActivity"
-62-->[com.facebook.react:react-android:0.73.4] C:\Users\teoyt\.gradle\caches\transforms-3\b4db2f23f2ab214a51186ce21dfe946e\transformed\jetified-react-android-0.73.4-debug\AndroidManifest.xml:20:13-77
+62-->[com.facebook.react:react-android:0.73.4] C:\Users\TeoYT\.gradle\caches\transforms-3\b4db2f23f2ab214a51186ce21dfe946e\transformed\jetified-react-android-0.73.4-debug\AndroidManifest.xml:20:13-77
 63            android:exported="false" />
-63-->[com.facebook.react:react-android:0.73.4] C:\Users\teoyt\.gradle\caches\transforms-3\b4db2f23f2ab214a51186ce21dfe946e\transformed\jetified-react-android-0.73.4-debug\AndroidManifest.xml:21:13-37
+63-->[com.facebook.react:react-android:0.73.4] C:\Users\TeoYT\.gradle\caches\transforms-3\b4db2f23f2ab214a51186ce21dfe946e\transformed\jetified-react-android-0.73.4-debug\AndroidManifest.xml:21:13-37
 64        <activity
-64-->[net.openid:appauth:0.11.1] C:\Users\teoyt\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:35:9-40:77
+64-->[net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:35:9-40:77
 65            android:name="net.openid.appauth.AuthorizationManagementActivity"
-65-->[net.openid:appauth:0.11.1] C:\Users\teoyt\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:36:13-78
+65-->[net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:36:13-78
 66            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation|keyboard|keyboardHidden"
-66-->[net.openid:appauth:0.11.1] C:\Users\teoyt\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:37:13-115
+66-->[net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:37:13-115
 67            android:exported="false"
-67-->[net.openid:appauth:0.11.1] C:\Users\teoyt\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:38:13-37
+67-->[net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:38:13-37
 68            android:launchMode="singleTask"
-68-->[net.openid:appauth:0.11.1] C:\Users\teoyt\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:39:13-44
+68-->[net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:39:13-44
 69            android:theme="@style/Theme.AppCompat.Translucent.NoTitleBar" />
-69-->[net.openid:appauth:0.11.1] C:\Users\teoyt\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:40:13-74
+69-->[net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:40:13-74
 70        <activity
-70-->[net.openid:appauth:0.11.1] C:\Users\teoyt\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:41:9-52:20
+70-->[net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:41:9-52:20
 71            android:name="net.openid.appauth.RedirectUriReceiverActivity"
-71-->[net.openid:appauth:0.11.1] C:\Users\teoyt\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:42:13-74
+71-->[net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:42:13-74
 72            android:exported="true" >
-72-->[net.openid:appauth:0.11.1] C:\Users\teoyt\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:43:13-36
+72-->[net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:43:13-36
 73            <intent-filter>
-73-->[net.openid:appauth:0.11.1] C:\Users\teoyt\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:44:13-51:29
+73-->[net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:44:13-51:29
 74                <action android:name="android.intent.action.VIEW" />
-74-->[net.openid:appauth:0.11.1] C:\Users\teoyt\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:26:13-65
-74-->[net.openid:appauth:0.11.1] C:\Users\teoyt\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:26:21-62
+74-->[net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:26:13-65
+74-->[net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:26:21-62
 75
 76                <category android:name="android.intent.category.DEFAULT" />
-76-->[net.openid:appauth:0.11.1] C:\Users\teoyt\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:47:17-76
-76-->[net.openid:appauth:0.11.1] C:\Users\teoyt\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:47:27-73
+76-->[net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:47:17-76
+76-->[net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:47:27-73
 77                <category android:name="android.intent.category.BROWSABLE" />
-77-->[net.openid:appauth:0.11.1] C:\Users\teoyt\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:28:13-74
-77-->[net.openid:appauth:0.11.1] C:\Users\teoyt\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:28:23-71
+77-->[net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:28:13-74
+77-->[net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:28:23-71
 78
 79                <data android:scheme="com.redirectScheme.comm" />
-79-->[net.openid:appauth:0.11.1] C:\Users\teoyt\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:30:13-44
-79-->[net.openid:appauth:0.11.1] C:\Users\teoyt\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:30:19-41
+79-->[net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:30:13-44
+79-->[net.openid:appauth:0.11.1] C:\Users\TeoYT\.gradle\caches\transforms-3\071cd28f1ba65308e38a3f38e36de750\transformed\jetified-appauth-0.11.1\AndroidManifest.xml:30:19-41
 80            </intent-filter>
 81        </activity>
 82        <activity
-82-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\teoyt\.gradle\caches\transforms-3\e853fdf1e0156c040588ca88cd821bd9\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+82-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\TeoYT\.gradle\caches\transforms-3\e853fdf1e0156c040588ca88cd821bd9\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
 83            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-83-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\teoyt\.gradle\caches\transforms-3\e853fdf1e0156c040588ca88cd821bd9\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+83-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\TeoYT\.gradle\caches\transforms-3\e853fdf1e0156c040588ca88cd821bd9\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
 84            android:exported="false"
-84-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\teoyt\.gradle\caches\transforms-3\e853fdf1e0156c040588ca88cd821bd9\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+84-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\TeoYT\.gradle\caches\transforms-3\e853fdf1e0156c040588ca88cd821bd9\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
 85            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-85-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\teoyt\.gradle\caches\transforms-3\e853fdf1e0156c040588ca88cd821bd9\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+85-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\TeoYT\.gradle\caches\transforms-3\e853fdf1e0156c040588ca88cd821bd9\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
 86
 87        <meta-data
-87-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\teoyt\.gradle\caches\transforms-3\f4982a588457462187a3ce8badf7ea0f\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+87-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\TeoYT\.gradle\caches\transforms-3\f4982a588457462187a3ce8badf7ea0f\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
 88            android:name="com.google.android.gms.version"
-88-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\teoyt\.gradle\caches\transforms-3\f4982a588457462187a3ce8badf7ea0f\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+88-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\TeoYT\.gradle\caches\transforms-3\f4982a588457462187a3ce8badf7ea0f\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
 89            android:value="@integer/google_play_services_version" />
-89-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\teoyt\.gradle\caches\transforms-3\f4982a588457462187a3ce8badf7ea0f\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+89-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\TeoYT\.gradle\caches\transforms-3\f4982a588457462187a3ce8badf7ea0f\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
 90
 91        <provider
-91-->[androidx.emoji2:emoji2:1.2.0] C:\Users\teoyt\.gradle\caches\transforms-3\faa3592d2fc203d6c74b9a5f601058a1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+91-->[androidx.emoji2:emoji2:1.2.0] C:\Users\TeoYT\.gradle\caches\transforms-3\faa3592d2fc203d6c74b9a5f601058a1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
 92            android:name="androidx.startup.InitializationProvider"
-92-->[androidx.emoji2:emoji2:1.2.0] C:\Users\teoyt\.gradle\caches\transforms-3\faa3592d2fc203d6c74b9a5f601058a1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+92-->[androidx.emoji2:emoji2:1.2.0] C:\Users\TeoYT\.gradle\caches\transforms-3\faa3592d2fc203d6c74b9a5f601058a1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
 93            android:authorities="com.awesomeproject.androidx-startup"
-93-->[androidx.emoji2:emoji2:1.2.0] C:\Users\teoyt\.gradle\caches\transforms-3\faa3592d2fc203d6c74b9a5f601058a1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+93-->[androidx.emoji2:emoji2:1.2.0] C:\Users\TeoYT\.gradle\caches\transforms-3\faa3592d2fc203d6c74b9a5f601058a1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
 94            android:exported="false" >
-94-->[androidx.emoji2:emoji2:1.2.0] C:\Users\teoyt\.gradle\caches\transforms-3\faa3592d2fc203d6c74b9a5f601058a1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+94-->[androidx.emoji2:emoji2:1.2.0] C:\Users\TeoYT\.gradle\caches\transforms-3\faa3592d2fc203d6c74b9a5f601058a1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
 95            <meta-data
-95-->[androidx.emoji2:emoji2:1.2.0] C:\Users\teoyt\.gradle\caches\transforms-3\faa3592d2fc203d6c74b9a5f601058a1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+95-->[androidx.emoji2:emoji2:1.2.0] C:\Users\TeoYT\.gradle\caches\transforms-3\faa3592d2fc203d6c74b9a5f601058a1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
 96                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-96-->[androidx.emoji2:emoji2:1.2.0] C:\Users\teoyt\.gradle\caches\transforms-3\faa3592d2fc203d6c74b9a5f601058a1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+96-->[androidx.emoji2:emoji2:1.2.0] C:\Users\TeoYT\.gradle\caches\transforms-3\faa3592d2fc203d6c74b9a5f601058a1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
 97                android:value="androidx.startup" />
-97-->[androidx.emoji2:emoji2:1.2.0] C:\Users\teoyt\.gradle\caches\transforms-3\faa3592d2fc203d6c74b9a5f601058a1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+97-->[androidx.emoji2:emoji2:1.2.0] C:\Users\TeoYT\.gradle\caches\transforms-3\faa3592d2fc203d6c74b9a5f601058a1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
 98            <meta-data
-98-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\teoyt\.gradle\caches\transforms-3\71b91ea8216105cda74b0317da307340\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+98-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\TeoYT\.gradle\caches\transforms-3\71b91ea8216105cda74b0317da307340\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
 99                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-99-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\teoyt\.gradle\caches\transforms-3\71b91ea8216105cda74b0317da307340\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+99-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\TeoYT\.gradle\caches\transforms-3\71b91ea8216105cda74b0317da307340\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
 100                android:value="androidx.startup" />
-100-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\teoyt\.gradle\caches\transforms-3\71b91ea8216105cda74b0317da307340\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+100-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\TeoYT\.gradle\caches\transforms-3\71b91ea8216105cda74b0317da307340\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
 101        </provider>
 102
 103        <meta-data
-103-->[com.facebook.soloader:soloader:0.10.5] C:\Users\teoyt\.gradle\caches\transforms-3\03d018e18e7118763cc731de8f689ba0\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:12:9-14:37
+103-->[com.facebook.soloader:soloader:0.10.5] C:\Users\TeoYT\.gradle\caches\transforms-3\03d018e18e7118763cc731de8f689ba0\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:12:9-14:37
 104            android:name="com.facebook.soloader.enabled"
-104-->[com.facebook.soloader:soloader:0.10.5] C:\Users\teoyt\.gradle\caches\transforms-3\03d018e18e7118763cc731de8f689ba0\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:13:13-57
+104-->[com.facebook.soloader:soloader:0.10.5] C:\Users\TeoYT\.gradle\caches\transforms-3\03d018e18e7118763cc731de8f689ba0\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:13:13-57
 105            android:value="false" />
-105-->[com.facebook.soloader:soloader:0.10.5] C:\Users\teoyt\.gradle\caches\transforms-3\03d018e18e7118763cc731de8f689ba0\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:14:13-34
+105-->[com.facebook.soloader:soloader:0.10.5] C:\Users\TeoYT\.gradle\caches\transforms-3\03d018e18e7118763cc731de8f689ba0\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:14:13-34
 106    </application>
 107
 108</manifest>

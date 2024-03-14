@@ -4,6 +4,7 @@
             "outputFile": "com.awesomeproject.app-mergeDebugResources-47:/values-ru/values-ru.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\teoyt\\.gradle\\caches\\transforms-3\\48b0d47373bd8f7d29d4a2a2607bd19d\\transformed\\jetified-exoplayer-core-2.19.0\\res\\values-ru\\values-ru.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
@@ -109,6 +110,9 @@
                 },
                 {
                     "source": "C:\\Users\\teoyt\\.gradle\\caches\\transforms-3\\095a0e95a3b97bffb68b6823a94aa0c4\\transformed\\browser-1.4.0\\res\\values-ru\\values-ru.xml",
+=======
+                    "source": "C:\\Users\\TeoYT\\.gradle\\caches\\transforms-3\\095a0e95a3b97bffb68b6823a94aa0c4\\transformed\\browser-1.4.0\\res\\values-ru\\values-ru.xml",
+>>>>>>> 181ae5a25d9d45218527f973dda5e398ef5674c3
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -125,7 +129,75 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\teoyt\\.gradle\\caches\\transforms-3\\b3627ca143232ec2ceb6e319eb18971d\\transformed\\appcompat-1.6.1\\res\\values-ru\\values-ru.xml",
+                    "source": "C:\\Users\\TeoYT\\.gradle\\caches\\transforms-3\\e853fdf1e0156c040588ca88cd821bd9\\transformed\\jetified-play-services-base-17.0.0\\res\\values-ru\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "245,350,548,672,780,981,1108,1249,1378,1618,1723,1917,2041,2267,2451,2546,2632",
+                        "endColumns": "104,197,123,107,200,126,140,128,239,104,193,123,225,183,94,85,110",
+                        "endOffsets": "349,547,671,779,980,1107,1248,1377,1617,1722,1916,2040,2266,2450,2545,2631,2742"
+                    },
+                    "to": {
+                        "startLines": "47,48,49,50,51,52,53,54,56,57,58,59,60,61,62,63,64",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "4267,4376,4574,4702,4814,5015,5146,5291,5640,5880,5989,6183,6311,6537,6725,6824,6914",
+                        "endColumns": "108,197,127,111,200,130,144,132,239,108,193,127,225,187,98,89,114",
+                        "endOffsets": "4371,4569,4697,4809,5010,5141,5286,5419,5875,5984,6178,6306,6532,6720,6819,6909,7024"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\TeoYT\\.gradle\\caches\\transforms-3\\b4db2f23f2ab214a51186ce21dfe946e\\transformed\\jetified-react-android-0.73.4-debug\\res\\values-ru\\values-ru.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,129,237,330,419,493,568,657,726,793,870,949,1038,1135,1207,1291,1384,1459,1541,1624,1701,1773,1848,1933,2005,2085,2155",
+                        "endColumns": "73,107,92,88,73,74,88,68,66,76,78,88,96,71,83,92,74,81,82,76,71,74,84,71,79,69,84",
+                        "endOffsets": "124,232,325,414,488,563,652,721,788,865,944,1033,1130,1202,1286,1379,1454,1536,1619,1696,1768,1843,1928,2000,2080,2150,2235"
+                    },
+                    "to": {
+                        "startLines": "35,41,42,46,71,73,74,76,90,91,92,130,131,132,133,135,136,137,138,139,140,141,142,144,145,146,147",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3148,3651,3759,4178,7624,7775,7850,8002,9048,9115,9192,12233,12322,12419,12491,12657,12750,12825,12907,12990,13067,13139,13214,13400,13472,13552,13622",
+                        "endColumns": "73,107,92,88,73,74,88,68,66,76,78,88,96,71,83,92,74,81,82,76,71,74,84,71,79,69,84",
+                        "endOffsets": "3217,3754,3847,4262,7693,7845,7934,8066,9110,9187,9266,12317,12414,12486,12570,12745,12820,12902,12985,13062,13134,13209,13294,13467,13547,13617,13702"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\TeoYT\\.gradle\\caches\\transforms-3\\f4982a588457462187a3ce8badf7ea0f\\transformed\\jetified-play-services-basement-17.0.0\\res\\values-ru\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "215",
+                        "endOffsets": "462"
+                    },
+                    "to": {
+                        "startLines": "55",
+                        "startColumns": "4",
+                        "startOffsets": "5424",
+                        "endColumns": "215",
+                        "endOffsets": "5635"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\TeoYT\\.gradle\\caches\\transforms-3\\13659b94c66de92d98d7f8af61234b95\\transformed\\core-1.9.0\\res\\values-ru\\values-ru.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "143",
+                        "startColumns": "4",
+                        "startOffsets": "13299",
+                        "endColumns": "100",
+                        "endOffsets": "13395"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\TeoYT\\.gradle\\caches\\transforms-3\\b3627ca143232ec2ceb6e319eb18971d\\transformed\\appcompat-1.6.1\\res\\values-ru\\values-ru.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -142,7 +214,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\teoyt\\.gradle\\caches\\transforms-3\\d3a8a24834f295d8078f18b8298041f7\\transformed\\material-1.9.0\\res\\values-ru\\values-ru.xml",
+                    "source": "C:\\Users\\TeoYT\\.gradle\\caches\\transforms-3\\d3a8a24834f295d8078f18b8298041f7\\transformed\\material-1.9.0\\res\\values-ru\\values-ru.xml",
                     "from": {
                         "startLines": "2,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -159,6 +231,7 @@
                         "endColumns": "12,77,77,83,97,90,96,136,91,65,98,76,62,117,60,64,56,69,60,53,115,56,61,53,73,127,87,85,136,83,84,90,53,50,65,71,77,95,79,75,76,76,88,72,89,94,73,80,92,54,65,85,84,61,63,62,97,99,94,101,57,54,79",
                         "endOffsets": "1320,4189,4267,4351,4449,4540,4838,4975,5067,8092,12307,12780,13007,13194,13255,13320,13377,13447,13508,13562,13678,13735,13797,13851,13925,14053,14364,14450,14587,14671,14756,14847,14901,14952,15018,15090,15168,15264,15344,15420,15497,15574,15663,15736,15826,15921,15995,16076,16169,16224,16290,16376,16461,16523,16587,16650,16748,16848,16943,17045,17103,17158,17238"
                     }
+<<<<<<< HEAD
                 },
                 {
                     "source": "C:\\Users\\teoyt\\.gradle\\caches\\transforms-3\\b4db2f23f2ab214a51186ce21dfe946e\\transformed\\jetified-react-android-0.73.4-debug\\res\\values-ru\\values-ru.xml",
@@ -176,6 +249,8 @@
                         "endColumns": "73,107,92,88,73,74,88,68,66,76,78,88,96,71,83,92,74,81,82,76,71,74,84,71,79,69,84",
                         "endOffsets": "4111,4648,4741,5156,12703,12855,12944,13076,14120,14197,14276,17327,17424,17496,17580,17755,17830,17912,17995,18072,18144,18219,18304,18477,18557,18627,18712"
                     }
+=======
+>>>>>>> 181ae5a25d9d45218527f973dda5e398ef5674c3
                 }
             ]
         }

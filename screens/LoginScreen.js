@@ -39,13 +39,14 @@ export default function LoginScreen() {
   async function authenticate () {
    
       const config = {
-        issuer:"https://accounts.spotify.com",
+       
         clientId:"a96b92afc71b49f89ea3509afe0ee718",
         scopes: [
           "user-read-email",
           "user-library-read",
           "user-read-recently-played",
           "user-top-read",
+          'user-read-private',
           "playlist-read-private",
           "playlist-read-collaborative",
           "playlist-modify-public"
@@ -53,7 +54,7 @@ export default function LoginScreen() {
         redirectUrl:"com.awesomeproject:/oauth",
         serviceConfiguration: {
           authorizationEndpoint: 'https://accounts.spotify.com/authorize',
-          tokenEndpoint: 'https://accounts.spotify.com/api/token',
+          tokenEndpoint: 'https://my-token-service/api/token',
         },
       }
       const result = await authorize(config);

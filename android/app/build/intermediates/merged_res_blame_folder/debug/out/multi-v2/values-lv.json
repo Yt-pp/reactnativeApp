@@ -4,7 +4,41 @@
             "outputFile": "com.awesomeproject.app-mergeDebugResources-47:/values-lv/values-lv.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\teoyt\\.gradle\\caches\\transforms-3\\d3a8a24834f295d8078f18b8298041f7\\transformed\\material-1.9.0\\res\\values-lv\\values-lv.xml",
+                    "source": "C:\\Users\\TeoYT\\.gradle\\caches\\transforms-3\\b3627ca143232ec2ceb6e319eb18971d\\transformed\\appcompat-1.6.1\\res\\values-lv\\values-lv.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,225,335,444,530,634,756,838,918,1028,1136,1242,1351,1462,1565,1677,1784,1889,1989,2074,2183,2294,2393,2504,2611,2716,2890,2989",
+                        "endColumns": "119,109,108,85,103,121,81,79,109,107,105,108,110,102,111,106,104,99,84,108,110,98,110,106,104,173,98,82",
+                        "endOffsets": "220,330,439,525,629,751,833,913,1023,1131,1237,1346,1457,1560,1672,1779,1884,1984,2069,2178,2289,2388,2499,2606,2711,2885,2984,3067"
+                    },
+                    "to": {
+                        "startLines": "7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,133",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "374,494,604,713,799,903,1025,1107,1187,1297,1405,1511,1620,1731,1834,1946,2053,2158,2258,2343,2452,2563,2662,2773,2880,2985,3159,12729",
+                        "endColumns": "119,109,108,85,103,121,81,79,109,107,105,108,110,102,111,106,104,99,84,108,110,98,110,106,104,173,98,82",
+                        "endOffsets": "489,599,708,794,898,1020,1102,1182,1292,1400,1506,1615,1726,1829,1941,2048,2153,2253,2338,2447,2558,2657,2768,2875,2980,3154,3253,12807"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\TeoYT\\.gradle\\caches\\transforms-3\\13659b94c66de92d98d7f8af61234b95\\transformed\\core-1.9.0\\res\\values-lv\\values-lv.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "142",
+                        "startColumns": "4",
+                        "startOffsets": "13447",
+                        "endColumns": "100",
+                        "endOffsets": "13543"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\TeoYT\\.gradle\\caches\\transforms-3\\d3a8a24834f295d8078f18b8298041f7\\transformed\\material-1.9.0\\res\\values-lv\\values-lv.xml",
                     "from": {
                         "startLines": "2,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -23,6 +57,7 @@
                     }
                 },
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\teoyt\\.gradle\\caches\\transforms-3\\b3627ca143232ec2ceb6e319eb18971d\\transformed\\appcompat-1.6.1\\res\\values-lv\\values-lv.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
@@ -75,6 +110,9 @@
                 },
                 {
                     "source": "C:\\Users\\teoyt\\.gradle\\caches\\transforms-3\\f4982a588457462187a3ce8badf7ea0f\\transformed\\jetified-play-services-basement-17.0.0\\res\\values-lv\\values.xml",
+=======
+                    "source": "C:\\Users\\TeoYT\\.gradle\\caches\\transforms-3\\f4982a588457462187a3ce8badf7ea0f\\transformed\\jetified-play-services-basement-17.0.0\\res\\values-lv\\values.xml",
+>>>>>>> 181ae5a25d9d45218527f973dda5e398ef5674c3
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -91,7 +129,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\teoyt\\.gradle\\caches\\transforms-3\\095a0e95a3b97bffb68b6823a94aa0c4\\transformed\\browser-1.4.0\\res\\values-lv\\values-lv.xml",
+                    "source": "C:\\Users\\TeoYT\\.gradle\\caches\\transforms-3\\b4db2f23f2ab214a51186ce21dfe946e\\transformed\\jetified-react-android-0.73.4-debug\\res\\values-lv\\values-lv.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,129,244,332,418,493,563,645,713,783,862,944,1028,1111,1181,1266,1347,1424,1506,1587,1663,1739,1814,1901,1979,2059,2131",
+                        "endColumns": "73,114,87,85,74,69,81,67,69,78,81,83,82,69,84,80,76,81,80,75,75,74,86,77,79,71,73",
+                        "endOffsets": "124,239,327,413,488,558,640,708,778,857,939,1023,1106,1176,1261,1342,1419,1501,1582,1658,1734,1809,1896,1974,2054,2126,2200"
+                    },
+                    "to": {
+                        "startLines": "34,40,41,45,70,72,73,75,89,90,91,129,130,131,132,134,135,136,137,138,139,140,141,143,144,145,146",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3258,3778,3893,4299,7757,7905,7975,8118,9195,9265,9344,12407,12491,12574,12644,12812,12893,12970,13052,13133,13209,13285,13360,13548,13626,13706,13778",
+                        "endColumns": "73,114,87,85,74,69,81,67,69,78,81,83,82,69,84,80,76,81,80,75,75,74,86,77,79,71,73",
+                        "endOffsets": "3327,3888,3976,4380,7827,7970,8052,8181,9260,9339,9421,12486,12569,12639,12724,12888,12965,13047,13128,13204,13280,13355,13442,13621,13701,13773,13847"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\TeoYT\\.gradle\\caches\\transforms-3\\095a0e95a3b97bffb68b6823a94aa0c4\\transformed\\browser-1.4.0\\res\\values-lv\\values-lv.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -125,6 +180,7 @@
                     }
                 },
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\teoyt\\.gradle\\caches\\transforms-3\\13659b94c66de92d98d7f8af61234b95\\transformed\\core-1.9.0\\res\\values-lv\\values-lv.xml",
                     "from": {
                         "startLines": "2",
@@ -162,6 +218,9 @@
                 },
                 {
                     "source": "C:\\Users\\teoyt\\.gradle\\caches\\transforms-3\\e853fdf1e0156c040588ca88cd821bd9\\transformed\\jetified-play-services-base-17.0.0\\res\\values-lv\\values.xml",
+=======
+                    "source": "C:\\Users\\TeoYT\\.gradle\\caches\\transforms-3\\e853fdf1e0156c040588ca88cd821bd9\\transformed\\jetified-play-services-base-17.0.0\\res\\values-lv\\values.xml",
+>>>>>>> 181ae5a25d9d45218527f973dda5e398ef5674c3
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",

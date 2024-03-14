@@ -64,11 +64,11 @@ useEffect(()=>{
                   className="mx-3"
                   renderItem={({item})=>{
                     return (
-                      <TouchableOpacity onPress={()=> {setCurrentTrack(item)}} className="p-3" style={{width:'49%'}}>
+                      <TouchableOpacity onPress={()=> {setCurrentTrack([]),setCurrentTrack(item)}} className="p-3" style={{width:'49%'}}>
                         <View>
                           <Image source={{uri:item.track.album.images[0].url}} style={{width:'100%'}} className="h-40 mb-0 rounded-2xl"></Image>
                           <View className="space-y-0">
-                          <Text numberOfLines={1} className={`${colors.heading} text-xl`}>{item.track.name}</Text>
+                          <Text numberOfLines={1} className={`${colors.heading} text-lg`}>{item.track.name}</Text>
                           <Text className={`${colors.heading} text-sm`}>{item.track.album.artists[0].name}</Text>
                           </View> 
                         </View>

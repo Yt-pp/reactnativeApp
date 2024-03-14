@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.awesomeproject.app-mergeDebugResources-39:/values-en-rXC/values-en-rXC.xml",
+            "outputFile": "com.awesomeproject.app-mergeDebugResources-47:/values-en-rXC/values-en-rXC.xml",
             "map": [
                 {
                     "source": "C:\\Users\\teoyt\\.gradle\\caches\\transforms-3\\095a0e95a3b97bffb68b6823a94aa0c4\\transformed\\browser-1.4.0\\res\\values-en-rXC\\values-en-rXC.xml",

@@ -39,7 +39,7 @@ export default function LoginScreen() {
   async function authenticate () {
    
       const config = {
-       
+       issuer:"https://accounts.spotify.com",
         clientId:"a96b92afc71b49f89ea3509afe0ee718",
         scopes: [
           "user-read-email",
@@ -51,11 +51,7 @@ export default function LoginScreen() {
           "playlist-read-collaborative",
           "playlist-modify-public"
         ],
-        redirectUrl:"com.awesomeproject:/oauth",
-        serviceConfiguration: {
-          authorizationEndpoint: 'https://accounts.spotify.com/authorize',
-          tokenEndpoint: 'https://my-token-service/api/token',
-        },
+        redirectUrl:"com.awesomeproject:/oauth"
       }
       const result = await authorize(config);
       console.log(result);
@@ -79,10 +75,6 @@ export default function LoginScreen() {
   const handleLogin = () => {
     let emailErrorText = '';
     let passwordErrorText = '';
-    const accessToken = 'BQAPGg-7jTvnd-NKRhLql2ubdIiM08CwwkyADVYVXaGcLWkpgWkKWfxiWPn2CKVIP_w226uVGv0F3xVPGLUV5sUjoS1wc-XBpwl6hTK928llSvVdZri3YJnjfb6c8CDBSpO1QbCHFsJ87KSTFp2n27hMRsmFXD5cyGftCLsVHWYaKd7wMbIaSszafuiDtEEJrg1LSPEHstLViQMtxzhsJhbnApZPuogUDpS2STZhexg4PPG61Ynzh765hR5Q5mjro7ms'
-    const expirationDate = '1710314746000';
-    AsyncStorage.setItem("token",accessToken);
-    AsyncStorage.setItem("expirationDate",expirationDate.toString());
 
     // Validate email
     if (!email) {

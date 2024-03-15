@@ -79,7 +79,7 @@ console.log(userProfile)
     // Function to handle end of long press
     const onLongPressEnd = () => {
         // Restore scale to normal
-        scale.value = withTiming(1.03, { duration: 100 });
+        scale.value = withTiming(1.03, { duration: 10 });
     };
 
     const handleModalClose = () => {

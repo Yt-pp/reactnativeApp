@@ -17,7 +17,7 @@ import { Dimensions, StatusBar, View } from 'react-native';
 import { HomeIcon, MagnifyingGlassIcon, MusicalNoteIcon } from 'react-native-heroicons/solid';
 import LibraryScreen from '../screens/LibraryScreen';
 
-const { width, height } = Dimensions.get("screen")
+const { width, height } = Dimensions.get("window")
 const Tab = createBottomTabNavigator()
 const Stack = createNativeStackNavigator();
 

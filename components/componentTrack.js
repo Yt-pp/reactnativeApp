@@ -8,88 +8,7 @@ export default function ComponentTrack() {
     const { currentTrack, setCurrentTrack } = useContext(Player);
     const { currentAlbum, setCurrentAlbum } = useContext(Player);
     const { modalVisible, setModalVisible } = useContext(Player);
-    const [ currentSound, setCurrentSound ] = useState(null);
-    const [isPlaying, setIsPlaying] = useState(true);
-    const [start,setStart] = useState(false);
-// Enable playback in silence mode
-Sound.setCategory('Playback');
-
-const playSound = () => {
-    if(!isPlaying || start){
-     
-        console.log("play")
-    currentSound.play((success) => {
-                    
-        if (success) {
-            console.log('Audio playback successful');
-            setIsPlaying(false);
-            
-        } else {
-            console.log('Audio playback failed');
-        }
-    });}
-        else{
-            console.log("pause")
-        currentSound.pause();
-    }
-}
-
-const play = async (nextTrack) => {
-  
-    const preview_url = nextTrack?.track?.preview_url;
-    console.log("got track")
-    // Stop the currently playing track, if any
-    if (currentSound) {
-        currentSound.stop(() => {
-            console.log('Stopped the current track');
-        });
-        currentSound.release(); // Release the resources associated with the current sound
-        setCurrentSound(null);
-    }
-
-    try {
-        setIsPlaying(true);
-      
-        setStart(true);
-        
-        
-        const sound = new Sound(preview_url, Sound.MAIN_BUNDLE, (error) => {
-            if (error) {
-                console.error(error);
-                return;
-            }else{
-            setCurrentSound(sound);
-            console.log("got set sound",sound)
-           
-        }
-        });   
-        
-    } catch (err) {
-        console.error(err.message);
-    }
-};
-
-     // Function to handle pause/play button press
-     const handlePausePlay = () => {
-        if (currentSound) {
-            playSound();
-            setIsPlaying(!isPlaying); // Toggle the playing state
-        }
-    };
-
-    useEffect(() => {
-        if (currentTrack) {
-            play(currentTrack);
-            console.log("got run play")
-        }
-    }, [currentTrack]);
-
-    useEffect(() => {
-        if (start) {
-            playSound();
-            console.log("got run")
-        }
-    }, [currentSound]);
+    const { isPlaying,handlePausePlay } = useContext(Player);
    
   return (    
     <>
@@ -105,7 +24,7 @@ const play = async (nextTrack) => {
                     </Text>
                 </View>
                 <View className="flex-row gap-2 ml-auto">
-                    <TouchableOpacity onPress={handlePausePlay}>
+                    <TouchableOpacity onPress={()=>{handlePausePlay();}}>
                      {/* Render PlayIcon if not playing, otherwise render PauseIcon */}
                      {isPlaying ? (
                                     <PauseIcon color="black" strokeWidth={2} stroke={200} size="30" />

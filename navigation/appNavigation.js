@@ -17,7 +17,7 @@ import { Dimensions, StatusBar, View } from 'react-native';
 import { HomeIcon, MagnifyingGlassIcon, MusicalNoteIcon } from 'react-native-heroicons/solid';
 import LibraryScreen from '../screens/LibraryScreen';
 
-const { width, height } = Dimensions.get("window")
+const { width, height } = Dimensions.get("screen")
 const Tab = createBottomTabNavigator()
 const Stack = createNativeStackNavigator();
 
@@ -56,7 +56,8 @@ const TabArr = [
 
 
 let statusBarHeight = StatusBar.currentHeight;
-
+const navbarHeight = height - StatusBar.currentHeight;
+console.log(navbarHeight)
 export default function AppNavigation() {
   const { isAuthenticated } = useContext(AuthContext);
   return (
@@ -64,7 +65,7 @@ export default function AppNavigation() {
       {isAuthenticated ? (
         <View style={{
           width,
-          height,
+          height:navbarHeight,
         }}>
           <Tab.Navigator
             screenOptions={{ 

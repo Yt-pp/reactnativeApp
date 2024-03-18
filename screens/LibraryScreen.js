@@ -13,19 +13,18 @@ export default function LibraryScreen() {
   const [recentlyPlayed, setRecentlyPlayed] = useState([]);
   const { currentTrack, setCurrentTrack } = useContext(Player);
   const [isPressed, setIsPressed] = useState(false);
-  const { play, handlePausePlay } = useContext(Player);
+  const { play, handlePausePlay,setCurrentAlbum } = useContext(Player);
 
-  const { modalVisible, setModalVisible } = useContext(Player);
-  // Initialize animated value using useSharedValue
-  const animation = useSharedValue(1);
+  const { modalVisible, setModalVisible, scale } = useContext(Player);
 
-  // Update the animation value when modalVisible changes
+  const animation = useSharedValue(scale); // Use scale as the initial value
+
+  // Update the animation value when scale changes
   useEffect(() => {
-    // Animate the value based on modal visibility
-    animation.value = withTiming(modalVisible ? 0.9 : 1, {
-      duration: 200, // Animation duration
-    });
-  }, [modalVisible]);
+      animation.value = withTiming(scale, {
+          duration: 300, // Animation duration
+      })
+  }, [scale]);
 
   // Define animated style
   const animatedStyle = useAnimatedStyle(() => {
@@ -37,6 +36,7 @@ export default function LibraryScreen() {
   // Function to handle onPress event
   const handlePress = (item) => {
     setCurrentTrack(item); // Set the current track
+    setCurrentAlbum(null);
     play(item); // Play the track and set the sound
     //handlePausePlay(); // Play the sound
   };
@@ -79,8 +79,9 @@ export default function LibraryScreen() {
               <Text className="text-lg">Library</Text>
             </View>
 
-            <Text className="text-2xl mx-6">Recently Played</Text>
+           
             <View style={{ height: 700 }}>
+            <Text className="text-2xl mx-6">Recently Played</Text>
               <FlatList
                 data={recentlyPlayed}
                 ListEmptyComponent={<EmptyList message={"You haven't recorded any kpop star yet"} />}

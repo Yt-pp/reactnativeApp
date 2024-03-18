@@ -60,7 +60,7 @@ const getProfile = async () => {
 useEffect(() => {
     getProfile();
 },[])
-console.log(userProfile)
+
 
     // Animated value to control the scale of the item on long press
     const scale = useSharedValue(1);

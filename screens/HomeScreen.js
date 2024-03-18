@@ -10,6 +10,7 @@ import ComponentTrack from '../components/componentTrack'
 import MusicPlayerModal from '../components/MusicPlayerModal'
 import { Player } from '../PlayContext'
 import AuthContext from '../auth.user'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const items = [
   {
@@ -52,6 +53,8 @@ export default function HomeScreen() {
   const navigation = useNavigation();
   const handleLogout = () =>{
     navigation.navigate('Login');
+    AsyncStorage.removeItem("token");
+    AsyncStorage.removeItem("expirationDate");
     logout();
   }
   

@@ -1,5 +1,5 @@
 import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native'
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useNavigation, useRoute } from '@react-navigation/core'
 import imageSequence from '../assets/images/image';
 import BackButton from '../components/backButton';
@@ -10,6 +10,8 @@ import HeartButton from '../components/heartButton';
 import ScreenWrapper from '../components/screenWrapper'
 import ComponentTrack from '../components/componentTrack';
 import { Player } from '../PlayContext';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import axios from 'axios';
 
 const categories = [
     {
@@ -77,6 +79,44 @@ export default function DetailScreen() {
     const navigation = useNavigation();
     const { params } = useRoute();
     let item = params;
+
+    const [ artistAlbum, setArtistAlbum ] = useState([]);
+
+    const getArtistAlbum = async () => {
+        const accessToken = await AsyncStorage.getItem("token");
+        try {
+          const response = await axios({
+            method: "GET",
+            url: "https://api.spotify.com/v1/artists/6YVMFz59CuY7ngCxTxjpxE/albums",
+            headers: {
+              Authorization: `Bearer ${accessToken}`
+            },
+          })
+          const data = await response.data.items;
+          setArtistAlbum(data);
+    
+        } catch (error) {
+          console.log(error.message)
+        }
+      };
+    
+    
+      //console.log(recentlyPlayed)
+      useEffect(() => {
+        getArtistAlbum();
+      }, [])
+
+
+      function formatReleaseYear(dateString) {
+        if (!dateString) {
+            return "N/A";
+        }
+        
+        const date = new Date(dateString);
+        const year = date.getFullYear();
+        
+        return year.toString();
+    }
     // console.log('item: ', item)
     return (
 
@@ -136,27 +176,26 @@ export default function DetailScreen() {
                     >
 
                         {
-                            categories.map((category, index) => {
+                            artistAlbum.map((category, index) => {
                                 let isActive = category.id == activeCategory;
                                 let btnClass = isActive ? 'bg-gray-600' : 'bg-gray-200'
                                 let textClass = isActive ? 'font-semibold text-gray-800' : 'text-gray-500'
                                 return (
                                     <View key={index} className="mr-6">
                                         <TouchableOpacity
-
                                             onPress={() => { navigation.navigate('Album', { ...category }) }}
                                             className={"flex flex-row justify-center items-center p-1 rounded-lg shadow-2xl bg-white" + btnClass}
                                         >
                                             <Image
                                                 style={{ width: 80, height: 80 }}
-                                                source={category.image}
+                                                source={{uri:category?.images[0].url}}
                                                 className="rounded-lg"
                                             ></Image>
                                             <View
-                                                style={{ minWidth: 150 }}
+                                                style={{width:150}}
                                                 className="bg-white pl-3 pr-5 py-5">
-                                                <Text className="text-gray-950 text-lg font-extrabold">{category.name}</Text>
-                                                <Text className="text-gray-400 text-sm font-semibold">{category.singer} - {category.year}</Text>
+                                                <Text numberOfLines={1} className="text-gray-950 text-lg font-extrabold">{category?.name}</Text>
+                                                <Text className="text-gray-400 text-sm font-semibold">{category?.artists[0].name} - {formatReleaseYear(category?.release_date)}</Text>
                                             </View>
                                         </TouchableOpacity>
                                     </View>

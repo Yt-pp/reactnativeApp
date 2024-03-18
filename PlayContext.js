@@ -12,8 +12,10 @@ const PlayerContext = ({children}) => {
     const [ currentSound, setCurrentSound ] = useState(null);
     const [isPlaying, setIsPlaying] = useState(true);
     const [currentTime, setCurrentTime] = useState(0);
-    const[ widthPercentage,setWidthPercentage ] = useState(0);
-    const[ duration,setDuration ] = useState(0);
+    const [ widthPercentage,setWidthPercentage ] = useState(0);
+    const [ duration,setDuration ] = useState(0);
+
+    const [ scale,setScale ] = useState(1);
     // Enable playback in silence mode
     Sound.setCategory('Playback');
 
@@ -30,7 +32,7 @@ const playSound = () => {
             setIsPlaying(false);
             console.log('Audio playback successful');   
             currentSound.getCurrentTime((seconds) => {
-                setCurrentTime(seconds); // Update current time state
+                setCurrentTime(Math.round(seconds)); // Update current time state
                 setWidthPercentage(((seconds / duration) * 100));
             });
         } else {
@@ -57,7 +59,7 @@ const play = async (nextTrack) => {
                 currentSound.stop(() => {
                     console.log('Stopped the current track');
                 });
-                setCurrentSound(null);
+             
             }
 
     try {
@@ -109,8 +111,26 @@ const play = async (nextTrack) => {
         }
     };
 
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            if (currentSound && isPlaying) {
+                currentSound.getCurrentTime((seconds) => {
+
+                    console.log("Current time:", (seconds));
+                    setCurrentTime(Math.ceil(seconds)); // Update current time state
+                    setWidthPercentage(Math.ceil(((seconds / currentSound.getDuration()) * 100)));
+                });
+            }
+        }, 1000); // Update every seconds
+
+        return () => clearInterval(intervalId);
+    }, [currentSound, isPlaying]);
+
     return (
-        <Player.Provider value={{currentTrack, setCurrentTrack, currentAlbum, setCurrentAlbum, modalVisible, setModalVisible, filled, setFilled, isPlaying, currentSound,currentTime, setCurrentTime, handlePausePlay, play,widthPercentage,setWidthPercentage}}>
+        <Player.Provider value={{currentTrack, setCurrentTrack, currentAlbum, setCurrentAlbum, modalVisible, 
+        setModalVisible, filled, setFilled, isPlaying, currentSound,currentTime, setCurrentTime, handlePausePlay, play,
+        widthPercentage, setWidthPercentage, scale, setScale}}>
             {children}
         </Player.Provider>
     )

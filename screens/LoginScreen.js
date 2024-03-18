@@ -20,7 +20,6 @@ export default function LoginScreen() {
       const expirationDate = await AsyncStorage.getItem("expirationDate");
       console.log("access token", accessToken);
       console.log("expiration date",expirationDate);
-      console.log(isAuthenticated)
       if(accessToken && expirationDate){
         const currentTime = Date.now();
         console.log("current time",currentTime)

@@ -1,8 +1,16 @@
 import { createContext,useEffect,useState } from "react";
 import Sound from "react-native-sound";
+import { useSignal,signal, computed,effect } from "@preact/signals";
 
+// Create a signal for managing the scale state
 const Player = createContext();
+export const scale = signal(1.0);
+export const scaleNew = computed(() => scale.value);
 
+const testScale = (newValue) => {
+    scale.value = newValue;
+
+ };
 const PlayerContext = ({children}) => {
     const [currentTrack,setCurrentTrack] = useState(null);
     const [currentAlbum,setCurrentAlbum] = useState(null);
@@ -14,8 +22,8 @@ const PlayerContext = ({children}) => {
     const [currentTime, setCurrentTime] = useState(0);
     const [ widthPercentage,setWidthPercentage ] = useState(0);
     const [ duration,setDuration ] = useState(0);
-
-    const [ scale,setScale ] = useState(1);
+    
+    
     // Enable playback in silence mode
     Sound.setCategory('Playback');
 
@@ -110,8 +118,7 @@ const play = async (nextTrack) => {
             console.log("got set sound",currentSound);
         }
     };
-
-
+    
     useEffect(() => {
         const intervalId = setInterval(() => {
             if (currentSound && isPlaying) {
@@ -130,7 +137,7 @@ const play = async (nextTrack) => {
     return (
         <Player.Provider value={{currentTrack, setCurrentTrack, currentAlbum, setCurrentAlbum, modalVisible, 
         setModalVisible, filled, setFilled, isPlaying, currentSound,currentTime, setCurrentTime, handlePausePlay, play,
-        widthPercentage, setWidthPercentage, scale, setScale}}>
+        widthPercentage, setWidthPercentage,testScale}}>
             {children}
         </Player.Provider>
     )

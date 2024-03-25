@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import { View, Text, ScrollView, Image, TouchableOpacity, Pressable, Dimensions } from 'react-native';
 import { BackwardIcon, ChevronDownIcon, ForwardIcon, PauseIcon, PlayIcon } from 'react-native-heroicons/solid';
 import { ArrowPathRoundedSquareIcon, EllipsisHorizontalIcon, StarIcon } from 'react-native-heroicons/outline';
-import { Player } from '../PlayContext';
+import { Player, PlayerContext } from '../PlayContext';
 import { BottomModal } from "react-native-modals";
 import { ModalContent } from "react-native-modals";
 import Animated, { FadeIn, FadeInDown, FadeOutDown } from 'react-native-reanimated';
@@ -11,7 +11,9 @@ import { Easing } from 'react-native-reanimated';
 import debounce from 'lodash/debounce';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
+import { signal, effect } from "@preact/signals-core";
+import { scale } from '../PlayContext';
+let prevY = 0; // Variable to store the previous y value
 export default function MusicPlayerModal() {
     const { modalVisible, setModalVisible } = useContext(Player);
     const { currentTrack, setCurrentTrack } = useContext(Player);
@@ -19,8 +21,14 @@ export default function MusicPlayerModal() {
     const { currentAlbum, setCurrentAlbum, currentTime, setCurrentTime, widthPercentage, setWidthPercentage } = useContext(Player);
     const { filled, setFilled ,play} = useContext(Player);
     const scrollViewRef = useRef(null);
-    const { scale, setScale } = useContext(Player); // State variable for controlling the scale of modal content
+   // Access scale and setScale from the PlayerContext
+  const { scaleNew,testScale } = useContext(Player);
+    const testing = signal(0.9);
+
     useEffect(() => {
+        if(modalVisible||!modalVisible){
+            prevY = 0;
+        }
         const intervalId = setInterval(() => {
             // Check if scrollViewRef.current is not null before calling scrollTo
             if (scrollViewRef.current) {
@@ -29,6 +37,8 @@ export default function MusicPlayerModal() {
         }, 5000); // Repeat every 5 seconds
 
         return () => clearInterval(intervalId); // Clear interval on unmount
+
+       
     }, []);
 
 
@@ -66,25 +76,33 @@ export default function MusicPlayerModal() {
         return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
     };
 
-
-    const test = Dimensions.get("screen").height
-    // Function to handle swiping
-    const handleSwiping = debounce((event) => {
-        // const { axis: { y } } = event;
-        
-        // let newScale;
-       
-        // if (y <= (test/2)&& scale>=0.9) {
-        //     newScale = Math.min(1.0, 1.0 - (y / 4000));
-        // } else if(y >=(test/2)&& scale<=1.0) {
-        //     newScale = Math.max(0.95, 0.95 + (y / 4000));
-        // }
-
-        
-        //     setScale(newScale);
-        
    
-    }, 16); // Adjust debounce delay for smoother animation
+    // Function to handle swiping
+        const handleSwiping = debounce((event) => {
+            const { axis: { y } } = event;
+            testScale(testing.value)
+            // console.log(event)
+            let newScale;
+            if (y > prevY && scale.value < 1.0) {
+                // Increase scale slowly as y increases until it reaches 1.0
+                testing.value = Math.min(scale.value + (y / 4000), 1.0);
+                console.log("scale big")
+            } else if (y < prevY && scale.value > 0.9) {
+                // Decrease scale slowly as y decreases until it reaches 0.9
+                testing.value = Math.max(scale.value - (y / 4000), 0.9);
+                console.log("scale small")
+            } else {
+                // Keep the scale unchanged
+                testing.value = scale.value;
+            }
+            
+        // Update previous y value
+        prevY = y;
+
+        console.log(scale.value)
+        
+        //setScale(testing.value);
+        }, 16);
 
 
     // Find the index of the current track in the current album
@@ -98,9 +116,8 @@ export default function MusicPlayerModal() {
             swipeDirection={["up", "down"]}
             onSwipeOut={() => setModalVisible(false)}
             onSwiping={handleSwiping}
-            onSwipeRelease={() => setScale(1)} // Reset scale to 1 when swipe is released
             onSwipingOut={() => {
-                setScale(1);
+                testScale(1);
                 setModalVisible(false);
             }}
             modalStyle={{ borderTopLeftRadius: 20, borderTopRightRadius: 20 }}
@@ -109,7 +126,7 @@ export default function MusicPlayerModal() {
                 <ModalContent>
 
                     <View className="px-4">
-                        <TouchableOpacity onPress={() => { setModalVisible(false); setScale(1); }} className="flex justify-center items-center my-6">
+                        <TouchableOpacity onPress={() => { setModalVisible(false); testScale(1); }} className="flex justify-center items-center my-6">
                             <ChevronDownIcon color="black"></ChevronDownIcon>
                         </TouchableOpacity>
                         <ScrollView className="space-y-3" entering={FadeOutDown.delay(600).duration(1000).springify()}>

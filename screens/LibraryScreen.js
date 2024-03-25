@@ -8,23 +8,27 @@ import { colors } from '../theme';
 import { Player, PlayerContext } from '../PlayContext';
 import ComponentTrack from '../components/componentTrack';
 import Animated, { useAnimatedStyle, withTiming, useSharedValue } from 'react-native-reanimated';
+import { scale,scaleNew } from '../PlayContext';
+import { computed, effect } from '@preact/signals';
 
 export default function LibraryScreen() {
   const [recentlyPlayed, setRecentlyPlayed] = useState([]);
   const { currentTrack, setCurrentTrack } = useContext(Player);
   const [isPressed, setIsPressed] = useState(false);
   const { play, handlePausePlay,setCurrentAlbum } = useContext(Player);
+  const { modalVisible, setModalVisible,testScale } = useContext(Player);
 
-  const { modalVisible, setModalVisible, scale } = useContext(Player);
+  const animation = useSharedValue(scaleNew.value); // Use scale as the initial value
+ 
+//   effect(() => (animation.value = withTiming(scaleNew.value, {
+//     duration:(300), // Animation duration
+// })));
+useEffect(()=>{
+  animation.value = withTiming(scaleNew.value, {
+    duration:(300), // Animation duration
+  })
+},[scaleNew.value])
 
-  const animation = useSharedValue(scale); // Use scale as the initial value
-
-  // Update the animation value when scale changes
-  useEffect(() => {
-      animation.value = withTiming(scale, {
-          duration: 300, // Animation duration
-      })
-  }, [scale]);
 
   // Define animated style
   const animatedStyle = useAnimatedStyle(() => {
@@ -32,6 +36,7 @@ export default function LibraryScreen() {
       transform: [{ scale: animation.value }],
     };
   });
+
 
   // Function to handle onPress event
   const handlePress = (item) => {

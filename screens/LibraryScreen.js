@@ -7,7 +7,7 @@ import EmptyList from '../components/emptyList';
 import { colors } from '../theme';
 import { Player, PlayerContext } from '../PlayContext';
 import ComponentTrack from '../components/componentTrack';
-import Animated, { useAnimatedStyle, withTiming, useSharedValue } from 'react-native-reanimated';
+import Animated, { useAnimatedStyle, withTiming, useSharedValue, useAnimatedProps } from 'react-native-reanimated';
 import { scale,scaleNew } from '../PlayContext';
 import { computed, effect } from '@preact/signals';
 
@@ -20,10 +20,9 @@ export default function LibraryScreen() {
 
   const animation = useSharedValue(scaleNew.value); // Use scale as the initial value
  
-//   effect(() => (animation.value = withTiming(scaleNew.value, {
-//     duration:(300), // Animation duration
-// })));
+  // 
 useEffect(()=>{
+  effect(() => (animation.value = withTiming(scaleNew.value)));
   animation.value = withTiming(scaleNew.value, {
     duration:(300), // Animation duration
   })
@@ -31,11 +30,15 @@ useEffect(()=>{
 
 
   // Define animated style
-  const animatedStyle = useAnimatedStyle(() => {
-    return {
-      transform: [{ scale: animation.value }],
-    };
-  });
+  // const animatedStyle = useAnimatedStyle(() => {
+  //   return {
+  //     transform: [{ scale: animation.value }],
+  //   };
+  // });
+
+  const animatedProps = useAnimatedProps(() => ({
+    transform:[{scale: animation.value}],
+  }));
 
 
   // Function to handle onPress event
@@ -79,7 +82,7 @@ useEffect(()=>{
       <View className="flex-1 bg-white" >
 
         <ScreenWrapper>
-          <Animated.View style={[animatedStyle]}>
+          <Animated.View animatedProps={animatedProps}>
             <View className="w-full flex justify-center items-center mt-3">
               <Text className="text-lg">Library</Text>
             </View>

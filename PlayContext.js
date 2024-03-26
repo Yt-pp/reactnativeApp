@@ -37,8 +37,9 @@ const playSound = () => {
     currentSound.play((success) => {
        
         if (success) {
-            setIsPlaying(false);
+            
             console.log('Audio playback successful');   
+            setIsPlaying(false);
             currentSound.getCurrentTime((seconds) => {
                 setCurrentTime(Math.round(seconds)); // Update current time state
                 setWidthPercentage(((seconds / duration) * 100));

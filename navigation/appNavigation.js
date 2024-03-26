@@ -14,8 +14,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useContext } from 'react';
 import AuthContext from '../auth.user';
 import { Dimensions, StatusBar, View } from 'react-native';
-import { HomeIcon, MagnifyingGlassIcon, MusicalNoteIcon } from 'react-native-heroicons/solid';
+import { HomeIcon, MagnifyingGlassIcon, MusicalNoteIcon, PaintBrushIcon } from 'react-native-heroicons/solid';
 import LibraryScreen from '../screens/LibraryScreen';
+import TestingAnimation from '../screens/testingAnimation';
 
 const { width, height } = Dimensions.get("screen")
 const Tab = createBottomTabNavigator()
@@ -51,7 +52,8 @@ const AuthStack = () => {
 const TabArr = [
   { route: 'HomeScreen', label: 'Home', stack:HomeStack, icon: HomeIcon },
   { route: 'SearchScreen', label: 'Search', stack:SongScreen, icon: MagnifyingGlassIcon },
-  { route: 'MusicLibraryScreen', label: 'Library', stack:LibraryScreen, icon: MusicalNoteIcon }
+  { route: 'MusicLibraryScreen', label: 'Library', stack:LibraryScreen, icon: MusicalNoteIcon },
+  { route: 'TestingScreen', label: 'Test', stack:TestingAnimation, icon: PaintBrushIcon }
 ]
 
 

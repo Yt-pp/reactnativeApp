@@ -14,6 +14,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { signal, effect } from "@preact/signals-core";
 import { scale } from '../PlayContext';
 let prevY = 0; // Variable to store the previous y value
+
 export default function MusicPlayerModal() {
     const { modalVisible, setModalVisible } = useContext(Player);
     const { currentTrack, setCurrentTrack } = useContext(Player);
@@ -80,29 +81,27 @@ export default function MusicPlayerModal() {
     // Function to handle swiping
         const handleSwiping = debounce((event) => {
             const { axis: { y } } = event;
-            testScale(testing.value)
+           
             // console.log(event)
             let newScale;
-            if (y > prevY && scale.value < 1.0) {
-                // Increase scale slowly as y increases until it reaches 1.0
-                testing.value = Math.min(scale.value + (y / 4000), 1.0);
-                console.log("scale big")
-            } else if (y < prevY && scale.value > 0.9) {
-                // Decrease scale slowly as y decreases until it reaches 0.9
-                testing.value = Math.max(scale.value - (y / 4000), 0.9);
-                console.log("scale small")
-            } else {
-                // Keep the scale unchanged
-                testing.value = scale.value;
-            }
+            // if (y > prevY && scale.value < 1.0) {
+            //     // Increase scale slowly as y increases until it reaches 1.0
+            //     testing.value = Math.min(scale.value + (y * 0.0001), 1.0);
+            //     console.log("scale big")
+            // } else if (y < prevY && scale.value > 0.9) {
+            //     // Decrease scale slowly as y decreases until it reaches 0.9
+            //     testing.value = Math.max(scale.value - (y * 0.0001), 0.9);
+            //     console.log("scale small")
+            // } else {
+            //     // Keep the scale unchanged
+            //     testing.value = scale.value;
+            // }
             
         // Update previous y value
         prevY = y;
-
-        console.log(scale.value)
-        
-        //setScale(testing.value);
-        }, 16);
+        testing.value = Math.max(0.9 + (y*0.0002),1.0);
+        testScale(testing.value)
+        }, 0);
 
 
     // Find the index of the current track in the current album

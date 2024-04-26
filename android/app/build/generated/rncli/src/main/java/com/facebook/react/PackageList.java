@@ -19,6 +19,8 @@ import com.reactnativecommunity.blurview.BlurViewPackage;
 import com.rnappauth.RNAppAuthPackage;
 // react-native-device-info
 import com.learnium.RNDeviceInfo.RNDeviceInfo;
+// react-native-gesture-handler
+import com.swmansion.gesturehandler.RNGestureHandlerPackage;
 // react-native-linear-gradient
 import com.BV.LinearGradient.LinearGradientPackage;
 // react-native-reanimated
@@ -84,6 +86,7 @@ public class PackageList {
       new BlurViewPackage(),
       new RNAppAuthPackage(),
       new RNDeviceInfo(),
+      new RNGestureHandlerPackage(),
       new LinearGradientPackage(),
       new ReanimatedPackage(),
       new SafeAreaContextPackage(),

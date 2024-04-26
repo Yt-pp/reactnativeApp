@@ -1,5 +1,5 @@
-import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native'
-import React, { useContext, useEffect, useState } from 'react'
+import { View, Text, ScrollView, Image, TouchableOpacity, ImageBackground } from 'react-native'
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react'
 import { useNavigation, useRoute } from '@react-navigation/core'
 import imageSequence from '../assets/images/image';
 import BackButton from '../components/backButton';
@@ -11,7 +11,10 @@ import ScreenWrapper from '../components/screenWrapper'
 import ComponentTrack from '../components/componentTrack';
 import { Player } from '../PlayContext';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { GestureHandlerRootView,TapGestureHandler } from 'react-native-gesture-handler';
 import axios from 'axios';
+import { HeartIcon } from 'react-native-heroicons/solid';
+import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
 
 const categories = [
     {
@@ -72,7 +75,7 @@ const Songs = [
     },
 ]
 
-
+const AnimatedImage = Animated.createAnimatedComponent(Image)
 export default function DetailScreen() {
     const { currentTrack, setCurrentTrack } = useContext(Player);
     const [activeCategory, setActiveCategory] = useState(null);
@@ -80,50 +83,83 @@ export default function DetailScreen() {
     const { params } = useRoute();
     let item = params;
 
-    const [ artistAlbum, setArtistAlbum ] = useState([]);
+    const [artistAlbum, setArtistAlbum] = useState([]);
 
     const getArtistAlbum = async () => {
         const accessToken = await AsyncStorage.getItem("token");
         try {
-          const response = await axios({
-            method: "GET",
-            url: "https://api.spotify.com/v1/artists/6YVMFz59CuY7ngCxTxjpxE/albums",
-            headers: {
-              Authorization: `Bearer ${accessToken}`
-            },
-          })
-          const data = await response.data.items;
-          setArtistAlbum(data);
-    
+            const response = await axios({
+                method: "GET",
+                url: "https://api.spotify.com/v1/artists/6YVMFz59CuY7ngCxTxjpxE/albums",
+                headers: {
+                    Authorization: `Bearer ${accessToken}`
+                },
+            })
+            const data = await response.data.items;
+            setArtistAlbum(data);
+
         } catch (error) {
-          console.log(error.message)
+            console.log(error.message)
         }
-      };
-    
-    
-      //console.log(recentlyPlayed)
-      useEffect(() => {
+    };
+
+
+    //console.log(recentlyPlayed)
+    useEffect(() => {
         getArtistAlbum();
-      }, [])
+    }, [])
 
 
-      function formatReleaseYear(dateString) {
+    function formatReleaseYear(dateString) {
         if (!dateString) {
             return "N/A";
         }
-        
+
         const date = new Date(dateString);
         const year = date.getFullYear();
-        
+
         return year.toString();
     }
+
+    const doubleTapRef = useRef();
+    const scaleForHeart = useSharedValue(0);
+    const sStyle = useAnimatedStyle(() => ({
+        transform: [
+            { scale: Math.max(scaleForHeart.value, 0) }
+        ]
+    }));
+    const onDoubleTap = useCallback(() => {
+        scaleForHeart.value = withSpring(0.5, undefined, (isFinished) => {
+            if (isFinished) {
+                scaleForHeart.value = withSpring(0);
+            }
+        });
+    }, []);
     // console.log('item: ', item)
     return (
 
         <View className="bg-white flex-1">
             <ScrollView contentContainerStyle={{ paddingBottom: currentTrack ? 160 : 80, }}>
                 <View className="relative">
-                    <Image className="w-full h-72" source={imageSequence(item.id)}></Image>
+                    <GestureHandlerRootView>
+                       
+                    <TapGestureHandler
+                    maxDelayMs={250}
+                    ref={doubleTapRef}
+                    numberOfTaps={2}
+                    onActivated={onDoubleTap}
+                    >
+                     <Animated.View>
+                        <ImageBackground className="w-full h-72" source={imageSequence(item.id)}>
+                            <AnimatedImage className="w-full h-52"
+                                resizeMode={'center'}
+                                source={require('../assets/images/heart.png')}
+                                style={[sStyle]} />
+                        </ImageBackground>
+                        </Animated.View>
+                        </TapGestureHandler>
+                  
+                    </GestureHandlerRootView>
                     <View className="absolute top-10 left-5">
                         <BackButton></BackButton>
                     </View>
@@ -188,11 +224,11 @@ export default function DetailScreen() {
                                         >
                                             <Image
                                                 style={{ width: 80, height: 80 }}
-                                                source={{uri:category?.images[0].url}}
+                                                source={{ uri: category?.images[0].url }}
                                                 className="rounded-lg"
                                             ></Image>
                                             <View
-                                                style={{width:150}}
+                                                style={{ width: 150 }}
                                                 className="bg-white pl-3 pr-5 py-5">
                                                 <Text numberOfLines={1} className="text-gray-950 text-lg font-extrabold">{category?.name}</Text>
                                                 <Text className="text-gray-400 text-sm font-semibold">{category?.artists[0].name} - {formatReleaseYear(category?.release_date)}</Text>
@@ -246,9 +282,9 @@ export default function DetailScreen() {
                 </View>
 
             </ScrollView>
-           
-                <ComponentTrack />
-      
+
+            <ComponentTrack />
+
         </View>
 
     )

@@ -42,7 +42,7 @@ const playSound = () => {
             setIsPlaying(false);
             currentSound.getCurrentTime((seconds) => {
                 setCurrentTime(Math.round(seconds)); // Update current time state
-                setWidthPercentage(((seconds / duration) * 100));
+                setWidthPercentage((seconds / duration));
             });
         } else {
             console.log('Audio playback failed');
@@ -50,7 +50,7 @@ const playSound = () => {
     });
     currentSound.getCurrentTime((seconds) => {
         setCurrentTime(seconds); // Update current time state
-        setWidthPercentage(((seconds / duration) * 100));
+        setWidthPercentage((seconds / duration));
     });  
 }
         else if(isPlaying){
@@ -88,7 +88,7 @@ const play = async (nextTrack) => {
                         console.log('Audio playback successful');
                         sound.getCurrentTime((seconds) => {
                             setCurrentTime(seconds); // Update current time state
-                            setWidthPercentage(((seconds / duration) * 100));
+                            setWidthPercentage((seconds / duration));
                         });
                        
                     } else {
@@ -97,7 +97,7 @@ const play = async (nextTrack) => {
                 });
                 sound.getCurrentTime((seconds) => {
                     setCurrentTime(seconds); // Update current time state
-                    setWidthPercentage(((seconds / duration) * 100));
+                    setWidthPercentage((seconds / duration));
                 });
                 setIsPlaying(true);
              
@@ -125,12 +125,14 @@ const play = async (nextTrack) => {
             if (currentSound && isPlaying) {
                 currentSound.getCurrentTime((seconds) => {
 
-                    console.log("Current time:", (seconds));
+                    // console.log("Current time:", (seconds));
+                    // console.log((seconds / currentSound.getDuration()))
                     setCurrentTime(Math.ceil(seconds)); // Update current time state
-                    setWidthPercentage(Math.ceil(((seconds / currentSound.getDuration()) * 100)));
-                });
+                   
+                    setWidthPercentage((seconds / currentSound.getDuration()));
+                },1000);
             }
-        }, 1000); // Update every seconds
+        }); // Update every seconds
 
         return () => clearInterval(intervalId);
     }, [currentSound, isPlaying]);

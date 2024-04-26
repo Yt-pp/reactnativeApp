@@ -10,12 +10,14 @@ function App() {
   
 
   return (
+
     <AuthProvider>
    <PlayerContext>
    <AppNavigation />
    <ModalPortal />
    </PlayerContext>
    </AuthProvider>
+   
   );
 }
 

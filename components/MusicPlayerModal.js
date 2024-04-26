@@ -84,22 +84,22 @@ export default function MusicPlayerModal() {
            
             // console.log(event)
             let newScale;
-            // if (y > prevY && scale.value < 1.0) {
-            //     // Increase scale slowly as y increases until it reaches 1.0
-            //     testing.value = Math.min(scale.value + (y * 0.0001), 1.0);
-            //     console.log("scale big")
-            // } else if (y < prevY && scale.value > 0.9) {
-            //     // Decrease scale slowly as y decreases until it reaches 0.9
-            //     testing.value = Math.max(scale.value - (y * 0.0001), 0.9);
-            //     console.log("scale small")
-            // } else {
-            //     // Keep the scale unchanged
-            //     testing.value = scale.value;
-            // }
+            if (y > prevY && scale.value < 1.0) {
+                // Increase scale slowly as y increases until it reaches 1.0
+                testing.value = Math.min(scale.value + (y * 0.0001), 1.0);
+                console.log("scale big")
+            } else if (y < prevY && scale.value > 0.9) {
+                // Decrease scale slowly as y decreases until it reaches 0.9
+                testing.value = Math.max(scale.value - (y * 0.0001), 0.9);
+                console.log("scale small")
+            } else {
+                // Keep the scale unchanged
+                testing.value = scale.value;
+            }
             
         // Update previous y value
         prevY = y;
-        testing.value = Math.max(0.9 + (y*0.0002),1.0);
+        //testing.value = Math.max(0.9 + (y*0.0002),1.0);
         testScale(testing.value)
         }, 0);
 
@@ -231,7 +231,7 @@ export default function MusicPlayerModal() {
                             </View>
                         </ScrollView>
                         <View style={{ height: 10 }} className="bg-gray-300 w-full mt-6 rounded-lg opacity-90">
-                            {currentSound ? <View style={{ width: `${Math.ceil(widthPercentage)}%`, borderTopLeftRadius: 30, borderBottomLeftRadius: 30 }} className="bg-gray-100 h-full"></View> : <View />}
+                            {currentSound ? <View style={{ width: `${widthPercentage*100}%`, borderTopLeftRadius: 30, borderBottomLeftRadius: 30 }} className="bg-gray-100 h-full"></View> : <View />}
                         </View>
                         <View className="flex-row justify-between mt-3">
                             <Text>{currentSound ? formatDuration(currentTime) : 'Loading...'}</Text>

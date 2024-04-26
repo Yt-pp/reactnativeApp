@@ -10,6 +10,7 @@ MERGED from [:react-native-async-storage_async-storage] C:\Users\teoyt\Desktop\T
 MERGED from [:react-native-community_blur] C:\Users\teoyt\Desktop\TestReact\reactnativeApp\node_modules\@react-native-community\blur\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:react-native-app-auth] C:\Users\teoyt\Desktop\TestReact\reactnativeApp\node_modules\react-native-app-auth\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:react-native-device-info] C:\Users\teoyt\Desktop\TestReact\reactnativeApp\node_modules\react-native-device-info\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:react-native-gesture-handler] C:\Users\teoyt\Desktop\TestReact\reactnativeApp\node_modules\react-native-gesture-handler\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:react-native-linear-gradient] C:\Users\teoyt\Desktop\TestReact\reactnativeApp\node_modules\react-native-linear-gradient\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:react-native-reanimated] C:\Users\teoyt\Desktop\TestReact\reactnativeApp\node_modules\react-native-reanimated\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:react-native-safe-area-context] C:\Users\teoyt\Desktop\TestReact\reactnativeApp\node_modules\react-native-safe-area-context\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
@@ -255,6 +256,8 @@ MERGED from [:react-native-app-auth] C:\Users\teoyt\Desktop\TestReact\reactnativ
 MERGED from [:react-native-app-auth] C:\Users\teoyt\Desktop\TestReact\reactnativeApp\node_modules\react-native-app-auth\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:react-native-device-info] C:\Users\teoyt\Desktop\TestReact\reactnativeApp\node_modules\react-native-device-info\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:react-native-device-info] C:\Users\teoyt\Desktop\TestReact\reactnativeApp\node_modules\react-native-device-info\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:react-native-gesture-handler] C:\Users\teoyt\Desktop\TestReact\reactnativeApp\node_modules\react-native-gesture-handler\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:react-native-gesture-handler] C:\Users\teoyt\Desktop\TestReact\reactnativeApp\node_modules\react-native-gesture-handler\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:react-native-linear-gradient] C:\Users\teoyt\Desktop\TestReact\reactnativeApp\node_modules\react-native-linear-gradient\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:react-native-linear-gradient] C:\Users\teoyt\Desktop\TestReact\reactnativeApp\node_modules\react-native-linear-gradient\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:react-native-reanimated] C:\Users\teoyt\Desktop\TestReact\reactnativeApp\node_modules\react-native-reanimated\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44

@@ -103,6 +103,7 @@ useEffect(() => {
     const handleCancelPress = () => {
         setIsFocused(false);
         Keyboard.dismiss(); // Dismiss the keyboard
+        handleDeleteInput();
     };
 
     const handleDeleteInput = () => {
@@ -137,6 +138,7 @@ useEffect(() => {
                             </TouchableOpacity>
                             <TextInput
                                 value={textInputValue}
+                                onChangeText={value=> setTextInputValue(value)}
                                 onFocus={() => setIsFocused(true)}
                                 placeholder='Artists, Songs, Lyrics and More'
                                 className="p-2 px-2">

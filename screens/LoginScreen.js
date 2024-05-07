@@ -110,8 +110,8 @@ export default function LoginScreen() {
 
   
   return (
-    <ScrollView className="flex-1 bg-white" style={{backgroundColor:colors.theme}}>
-
+    <ScrollView className="bg-white">
+<View className="flex-1" style={{backgroundColor:colors.theme}}>
    
     <SafeAreaView className="flex">
       <Animated.View entering={LightSpeedInLeft.delay(150).duration(1000)} className="flex-row justify-start mt-5">
@@ -128,7 +128,7 @@ export default function LoginScreen() {
 
     </SafeAreaView>
     <Animated.View entering={SlideInDown.delay(100).duration(500)} className="flex-1 bg-white px-8 pt-8"
-    style={{borderTopLeftRadius:50,borderTopRightRadius:50}}
+    style={{borderTopLeftRadius:50,borderTopRightRadius:50,height:'100%'}}
     >
       <View className="form space-y-2">
           <Animated.View entering={FadeInDown.delay(400).duration(1000).springify()}>
@@ -203,6 +203,7 @@ export default function LoginScreen() {
             </Animated.View>
       </View>
     </Animated.View>
+    </View>
     </ScrollView>
   );
 }
